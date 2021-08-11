@@ -20,15 +20,21 @@ def index():
 @app.route('/about')
 def about():
     return render_template('about.html')
+    
 
-@app.route('/registercompany')
-def registercompany():
-    return render_template('registercompany.html')
+@app.route('/joinus')
+def joinus():
+    return render_template('joinus.html')
+
 
 @app.route('/login')
 def login():
     return render_template('login.html')
 
+
+@app.route('/registercompany')
+def registercompany():
+    return render_template('registercompany.html')
 
 # Error Handling of 404 & 500
 @app.errorhandler(404)
