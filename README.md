@@ -53,8 +53,6 @@ The colour scheme for the game was created using Coolers.
 
 
 ## Wireframe Designs
-The Wireframe designs were created in a notebook using a pencil and then redone using , and the following images are photos taken from the notebook. As they are handwritten, some of the writing may not be fully legible to all readers. To combat this, I have added a typed description of all pages below the image. Please refer to those if needed.  
-
 Please keep in mind that the drawings were the first stage of the design. and the actual website may look somewhat different from the drawings. Where the two differ, I offer an explanation as to why. 
 
 ### The Project Overview 
@@ -158,6 +156,8 @@ The content of this website was created by Phoebe Ireland, with the exception of
   * Used to apply 
 * [Coolors](https://coolors.co/)
   * Used to create the colour scheme for the page
+* [Unsplash](https://unsplash.com/)
+  * Used for the images found on the site
 * [Bootstrap](https://getbootstrap.com/)
   * Used to create the Navbar
   * 
