@@ -112,7 +112,7 @@ The EmailJS extenstion was tested using a sample email address and sample messag
 
 
 ## Small Problems (that were fixed)
-* 
+* For some reason, the background image was being really difficult and was refusing to fit the page. This was eventually fixed by adding a couple of lines to the css code relating to the background image.
 * 
 * 
 * 
