@@ -153,7 +153,7 @@ Created by Phoebe Ireland
 
 The content of this website was created by Phoebe Ireland, with the exception of the following:
 * [Google Fonts](https://fonts.google.com/)
-  * Used to apply 
+  * Used to apply the Hahmlet font to all pages
 * [Coolors](https://coolors.co/)
   * Used to create the colour scheme for the page
 * [Unsplash](https://unsplash.com/)
