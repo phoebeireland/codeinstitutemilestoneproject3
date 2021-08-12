@@ -12,6 +12,16 @@
     font-family: 'Hahmlet', serif;
   }
 
+  #welcomeheader {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+  }
+
+  #indexboxes {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+  }
+
     /*Footer*/
 .footer{
     margin-top: 1rem;
