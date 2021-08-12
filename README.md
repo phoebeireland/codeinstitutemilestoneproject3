@@ -161,6 +161,8 @@ The content of this website was created by Phoebe Ireland, with the exception of
 * [Bootstrap](https://getbootstrap.com/)
   * Used to create the Navbar
   * 
+* [favicon.io](https://favicon.io/)
+  * Used to create the favicon
 * [jQuery](https://jquery.com/)
   * Uses jQuery for 
 * Code Institute's Love Maths Project
