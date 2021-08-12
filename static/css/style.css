@@ -22,6 +22,29 @@
       margin-bottom: 2rem;
   }
 
+  #aboutusheader {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  #aboutpageperson1 {
+    background: rgba(0, 0, 0, 0.473);
+    padding-top: 2rem;
+    color: ghostwhite;
+  }
+
+  #aboutpageperson2 {
+    background: rgba(0, 0, 0, 0.473);
+    padding-top: 2rem;
+    color: ghostwhite;
+  }
+
+  #aboutpageperson3 {
+    background: rgba(0, 0, 0, 0.473);
+    padding-top: 2rem;
+    color: ghostwhite;
+  }
+
     /*Footer*/
 .footer{
     margin-top: 1rem;
