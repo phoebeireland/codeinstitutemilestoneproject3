@@ -31,10 +31,18 @@ def joinus():
 def login():
     return render_template('login.html')
 
+@app.route('/contactus')
+def contactus():
+    return render_template('contactus.html')
+
 
 @app.route('/registercompany')
 def registercompany():
     return render_template('registercompany.html')
+
+@app.route('/forum')
+def forum():
+    return render_template('forum.html')
 
 # Error Handling of 404 & 500
 @app.errorhandler(404)
