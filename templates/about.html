@@ -2,5 +2,73 @@
 
 {% block content %}
 
+<section class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center about-title">
+                <h2 id="aboutusheader">About Us</h2>
+            </div>
+        </div>
+        <div class="row about-row page-desc">
+            <div class="col-md-6 text-center">
+                <p>
+                    Rate Venture is a community built to inspire and connect outdoor enthusiasts 
+                    looking for their next adventure. We recognise that when travelling to a new location,
+                    it is sometimes difficult to find the perfect outdoor company that fits you or your family's 
+                    needs. We are here to help you find a reputable company that will be the perfect fit
+                    for your next outdoor excurstion, whether you're looking for guided hikes, rock climbing,
+                    white water rafting or more!
+                    <br>
+                    <br>
+                    *At the moment, Rate Venture is operating mainly from the US, but we are working on 
+                    expanding our area to the EU.*
+
+                </p>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="{{ url_for('static', filename='/images/aboutpagekayaking.jpg') }}" 
+                    alt="people kayaking down a river" class="img-fluid">
+            </div>
+        </div>
+        <div class="row my-5 page-desc text-center">
+            <div class="col-md-4 mb-3" id="aboutpageperson1">
+                <img src="{{ url_for('static', filename='/images/sallyprofilepic.jpg') }}" 
+                    alt="profile pic of Sally Williams" class="profile-pic rounded-circle mb-3">
+                <p>
+                    The best community of outdoor lovers I've ever found! The ratings are reliable, 
+                    and the companies on the website are the best! Managed to find the perfect company for 
+                    my family trip last year to North Carolina.
+                </p>
+                <p class="fst-italic">
+                    Sally Williams, Miami, Florida
+                </p>
+            </div>
+            <div class="col-md-4 mb-3" id="aboutpageperson2">
+                <img src="{{ url_for('static', filename='/images/bethprofilepic.jpg') }}" 
+                    alt="profile pic of Beth Deerhurst" class="profile-pic rounded-circle mb-3">
+                <p>
+                    Thanks to Rate Venture, I was able to connect with a wonderful hiking company that
+                    set up an amazing backpacking trip for me and my husband and our two dogs.
+                    Have been recommending this site to all my friends!
+                </p>
+                <p class="fst-italic">
+                    Beth Deerhurst, San Fransico, California
+                </p>
+            </div>
+            <div class="col-md-4 mb-3" id="aboutpageperson3">
+                <img src="{{ url_for('static', filename='/images/samuelprofilepic.jpg') }}" 
+                    alt="profile pic of Samuel Coort" class="profile-pic rounded-circle mb-3">
+                <p>
+                    I wasn't sure where to even begin planning my solo trip to the States last summer, but thanks to
+                    Rate Venture, I was able to find several companies that were very helpful. 
+                    Deginitely would not have been possible without this site!
+                </p>
+                <p class="fst-italic">
+                    Samuel Coort, London, UK
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
