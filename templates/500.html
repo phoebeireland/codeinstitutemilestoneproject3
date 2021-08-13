@@ -1,6 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-
+<section class="error error-server">
+    <div class="error__container error__box-img">
+        <h1 class="error__heading text-center" id="internalservererrorheading">Oops!<br> 500</h1>
+        <h3 class="error__text">
+            It looks like that there is an internal server error.
+            <br>
+            Click the button below to return to the Home Page!
+        </h3>
+        <!-- Href Home Button -->
+        <div id="internalservererrorbtn">
+            <button type="button" class="btn btn-secondary">
+                <a href="{{url_for('index')}}" aria-label="Get back!" style="color: white">
+                    Home Page
+                </a>
+            </button>
+        </div>
+    </div>
+</section>
 {% endblock %}
