@@ -2,5 +2,30 @@
 
 {% block content %}
 
+<section class="about">
+    <div class="container content">
+        <div class="row">
+            <div class="col-sm-12 text-center about-title">
+                <h2 id="joinuspageheader">Register for Rate Venture</h2>
+            </div>
+        </div>
+        <div class="row about-row">
+            <div class="col-sm-12 text-center">
+                {% if 'username' in session %}
+                    <p class="page-desc">You are already logged in!</p>
+                {% else %}
+                    <p class="page-desc">
+                        Registering for Rate Venture is essential for beginning your next outdoor adventure! 
+                        As a registered user, you will have the ability to find new companies and rate those you've used.
+                        Help your fellow outdoor enthusiasts to find a reputable company, and let them know which 
+                        ones to steer clear of! 
+                        <br>
+                        Join our community today!
+                    </p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
