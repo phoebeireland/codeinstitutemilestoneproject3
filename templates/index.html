@@ -54,7 +54,7 @@
 
     <div class="container">
         <div class="row card-row" id="indexboxes">
-            <div class="card home-card col-sm-12 col-md-6">
+            <div class="card home-card col-sm-12 col-md-6" id="indexbox1">
                 <div class="card-body text-center">
                     {% if 'username' in session %}
                     <h5 class="card-title hca-title">Have a comment for us?</h5>
@@ -64,7 +64,7 @@
                     <p class="card-text hca-p2">
                         Submit a recommentdation or comment for the website here!
                     </p>
-                    <a href="{{ url_for('contactus') }}" class="btn btn-primary">Contact Us</a>
+                    <a href="{{ url_for('contactus') }}" class="btn btn-dark">Contact Us</a>
                     {% else %}
                     <h5 class="card-title hca-title">Join Rate Venture</h5>
                     <p class="card-text">
@@ -74,11 +74,11 @@
                         Become part of our community and find highly rated, reputable companies that will
                         help make your next vacation a hit! 
                     </p>
-                    <a href="{{ url_for('joinus') }}" class="btn btn-primary">Join Us</a>
+                    <a href="{{ url_for('joinus') }}" class="btn btn-dark">Join Us</a>
                     {% endif %}
                 </div>
             </div>
-            <div class="card home-card col-sm-12 col-md-6">
+            <div class="card home-card col-sm-12 col-md-6" id="indexbox2">
                 <div class="card-body text-center">
                     {% if 'username' in session %}
                     <h5 class="card-title hca-title">Intrepid Adventurer</h5>
@@ -89,17 +89,17 @@
                         Create your own reviews or read exisiting reviews to help you find the most
                         suitable company for you or your family's needs.
                     </p>
-                    <a href="{{ url_for('forum') }}" class="btn btn-primary">Forum</a>
+                    <a href="{{ url_for('forum') }}" class="btn btn-dark">Forum</a>
                     {% else %}
                     <h5 class="card-title hca-title">Login to Rate Venture</h5>
                     <p class="card-text">
                         Returning user? Sign in here to jump back in and discover your next adventure!
                     </p>
                     <p class="card-text hca-p2">
-                        You will have the option to add to the forum by creating a post! Or read company 
+                        You will have the option to add to the forum by creating a review! Or read company 
                         reviews from other users to help make your decision.
                     </p>
-                    <a href="{{ url_for('login') }}" class="btn btn-primary">Login</a>
+                    <a href="{{ url_for('login') }}" class="btn btn-dark">Login</a>
                     {% endif %}
                 </div>
             </div>

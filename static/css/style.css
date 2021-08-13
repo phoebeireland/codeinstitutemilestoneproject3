@@ -22,6 +22,16 @@
       margin-bottom: 2rem;
   }
 
+  #indexbox1 {
+    background: rgba(0, 0, 0, 0.473);
+    color: ghostwhite;
+  }
+
+  #indexbox2 {
+      background: rgba(0, 0, 0, 0.473);
+      color: ghostwhite;
+  }
+
   #aboutusheader {
     margin-top: 2rem;
     margin-bottom: 2rem;
