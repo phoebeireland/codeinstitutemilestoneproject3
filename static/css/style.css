@@ -52,7 +52,15 @@
   #sitenotfoundbtn {
     text-align: center;
     margin-top: 2rem;
-    
+}
+
+  #internalservererrorheading {
+      margin-top: 2rem;
+  }
+
+  #internalservererrorbtn {
+    text-align: center;
+    margin-top: 2rem;
 }
 
 
