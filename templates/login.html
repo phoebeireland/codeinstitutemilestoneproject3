@@ -5,17 +5,17 @@
         <div class="container content">
             <div class="row">
                 <div class="col-sm-12 text-center about-title">
-                    <h1 id="loginpageheader">Login to Chrysalis Coding</h1>
+                    <h1 id="loginpageheader">Login to Rate Venture</h1>
                 </div>
             </div>
             <div class="row about-row">
-                <div class="col-sm-12 col-lg-6 text-center">
+                <div class="col-sm-12 text-center">
                     {% if 'username' in session %}
-                        <p class="page-desc">You are already logged in!</p>
+                        <h3 class="page-desc">You are already logged in!</h3>
                     {% else %}
-                        <p class="page-desc">
-                            Login to Rate Venture and find inspiration for your next outdoor adventure! 
-                        </p>
+                        <h3 class="page-desc">
+                            Login and find inspiration for your next outdoor adventure! 
+                        </h3>
                     {% endif %}
                 </div>
             </div>
