@@ -65,6 +65,40 @@
     margin-bottom: 2rem;
 }
 
+#registercompanyform {
+  background: rgba(0, 0, 0, 0.473);
+  color: ghostwhite;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.registerforminput {
+  margin-top: 1rem;
+}
+
+#joinusform {
+  background: rgba(0, 0, 0, 0.473);
+  color: ghostwhite;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.joinusinput {
+  margin-top: 1rem;
+}
+
+#loginform {
+  background: rgba(0, 0, 0, 0.473);
+  color: ghostwhite;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.loginforminput {
+  margin-top: 1rem;
+}
+
+
   #sitenotfoundheading {
       margin-top: 2rem;
   }

@@ -12,17 +12,80 @@
         <div class="row about-row">
             <div class="col-sm-12 text-center">
                 {% if 'username' in session %}
-                    <p class="page-desc">You are already logged in!</p>
+                <p class="page-desc">You are already logged in!</p>
                 {% else %}
-                    <p class="page-desc">
-                        Registering for Rate Venture is essential for beginning your next outdoor adventure! 
-                        As a registered user, you will have the ability to find new companies and rate those you've used.
-                        Help your fellow outdoor enthusiasts to find a reputable company, and let them know which 
-                        ones to steer clear of! 
-                        <br>
-                        Join our community today!
-                    </p>
+                <p class="page-desc">
+                    Registering for Rate Venture is essential for beginning your next outdoor adventure!
+                    As a registered user, you will have the ability to find new companies and rate those you've used.
+                    Help your fellow outdoor enthusiasts to find a reputable company, and let them know which
+                    ones to steer clear of!
+                    <br>
+                    Join our community today!
+                </p>
                 {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+
+        <div class="row" id="joinusform">
+            <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('joinus') }}">
+                <div class="card-panel">
+                    <!--first and last names-->
+                    <div class="row">
+                        <div class="input-field col s12 joinusinput">
+                            <label for="firstname">First Name</label>
+                            <input id="firstname" name="firstname" type="text" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 joinusinput">
+                            <label for="lastname">Last Name</label>
+                            <input id="lastname" name="lastname" type="text" required>
+                        </div>
+                    </div>
+                    <!--email-->
+                    <div class="row">
+                        <div class="input-field col-s-12 joinusinput">
+                            <label for="email">Email Address:</label>
+                            <input type="email" id="email" name="email_address" required />
+                        </div>
+                    </div>
+                    <!-- username -->
+                    <div class="row">
+                        <div class="input-field col s12 joinusinput">
+                            <label for="username">Username</label>
+                            <input id="username" name="username" type="text" minlength="5" maxlength="15"
+                                pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        </div>
+                    </div>
+                    <!-- password -->
+                    <div class="row">
+                        <div class="input-field col s12 joinusinput">
+                            <label for="password">Password</label>
+                            <input id="password" name="password" type="password" minlength="5" maxlength="15"
+                                pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        </div>
+                    </div>
+                    <!-- register -->
+                    <div class="d-grid gap-2 col-6 mx-auto joinusinput">
+                        <button type="submit" class="btn btn-dark">
+                            Join Us
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="row">
+            <div class="col s12">
+                <p class="center-align text-center">
+                    Already joined?
+                    <a href="{{ url_for('login') }}" class="light-blue-text text-darken-4">Log In</a>
+                </p>
             </div>
         </div>
     </div>

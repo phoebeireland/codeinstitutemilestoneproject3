@@ -1,26 +1,68 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <section class="about">
-        <div class="container content">
-            <div class="row">
-                <div class="col-sm-12 text-center about-title">
-                    <h1 id="loginpageheader">Login to Rate Venture</h1>
-                </div>
-            </div>
-            <div class="row about-row">
-                <div class="col-sm-12 text-center">
-                    {% if 'username' in session %}
-                        <h3 class="page-desc">You are already logged in!</h3>
-                    {% else %}
-                        <h3 class="page-desc">
-                            Login and find inspiration for your next outdoor adventure! 
-                        </h3>
-                    {% endif %}
-                </div>
+<section class="about">
+    <div class="container content">
+        <div class="row">
+            <div class="col-sm-12 text-center about-title">
+                <h1 id="loginpageheader">Login to Rate Venture</h1>
             </div>
         </div>
-    </section>
+        <div class="row about-row">
+            <div class="col-sm-12 text-center">
+                {% if 'username' in session %}
+                <h5 class="page-desc">You are already logged in!</h5>
+                {% else %}
+                <h5 class="page-desc">
+                    Login and find inspiration for your next outdoor adventure!
+                </h5>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
 
+<section>
+    <div class="container">
+
+        <div class="row" id="loginform">
+            <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
+                <div class="card-panel">
+                    <!-- username -->
+                    <div class="row">
+                        <div class="input-field col s12 loginforminput">
+                            <label for="username">Username</label>
+                            <input id="username" name="username" type="text" minlength="5" maxlength="15"
+                                pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        </div>
+                    </div>
+                    <!-- passowrd -->
+                    <div class="row">
+                        <div class="input-field col s12 loginforminput">
+                            <label for="password">Password</label>
+                            <input id="password" name="password" type="password" minlength="5" maxlength="15"
+                                pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        </div>
+                    </div>
+                    <!-- login -->
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button type="submit" class="btn btn-dark">
+                            Login
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="row">
+            <div class="col s12">
+                <p class="center-align text-center">
+                    New Here?
+                    <a href="{{ url_for('joinus') }}" class="light-blue-text text-darken-4">Join Us</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}

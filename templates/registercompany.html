@@ -12,21 +12,82 @@
         <div class="row about-row">
             <div class="col-sm-12 text-center">
                 {% if 'username' in session %}
-                    <p class="page-desc">You are already logged in! This page is strictly for companies looking to join the site</p>
+                <p class="page-desc">You are already logged in! This page is strictly for companies looking to join the
+                    site</p>
                 {% else %}
-                    <p class="page-desc">
-                        Registering your company with Rate Venture is crucial for connecting with prosepctive clients! 
-                        <br>
-                        As a registered company, you will have a company page where users can contact you directly, or 
-                        leave reviews once they've used you.
-                        <br>
-                        Register your company today!
-                    </p>
+                <p class="page-desc">
+                    Registering your company with Rate Venture is crucial for connecting with prosepctive clients!
+                    <br>
+                    As a registered company, you will have a company page where users can contact you directly, or
+                    leave reviews once they've used you.
+                    <br>
+                    Register your company today!
+                </p>
                 {% endif %}
             </div>
         </div>
     </div>
 </section>
 
+<section>
+    <div class="container">
+
+        <div class="row" id="registercompanyform">
+            <form class="col-sm-12" method="POST" action="{{ url_for('registercompany') }}">
+                <div class="card-panel">
+                    <!--Company Name-->
+                    <div class="row">
+                        <div class="input-field col s12 registerforminput">
+                            <label for="companyname">Company Name</label>
+                            <input id="companyname" name="companyname" type="text" required>
+                        </div>
+                    </div>
+                    <!--Company Website-->
+                    <div class="row">
+                        <div class="input-field col s12 registerforminput">
+                            <label for="companywebsite">Link to Company Website</label>
+                            <input id="companywebsite" name="companywebsite" type="text" required>
+                        </div>
+                    </div>
+                    <!--Company Number-->
+                    <div class="row">
+                        <div class="input-field col s12 registerforminput">
+                            <label for="companynumber">Company Phone Number</label>
+                            <input id="companynumber" name="companynumber" type="integer" placeholder="eg: 123-456-7890"
+                                required>
+                        </div>
+                    </div>
+                    <!--Company Location-->
+                    <div class="row">
+                        <div class="input-field col s12 registerforminput">
+                            <label for="companylocation">Location</label>
+                            <input id="companylocation" name="companylocation" type="text" required>
+                        </div>
+                    </div>
+                    <!--email-->
+                    <div class="row">
+                        <div class="input-field col-s-12 registerforminput">
+                            <label for="email">Email Address:</label>
+                            <input type="email" id="email" name="email_address" required />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col-s-12 registerforminput">
+                            <h5 id="other-info-prompt">Any other information:</h5>
+                            <textarea name="any-other-info" rows="15" cols="30"
+                                placeholder="Add a company blurb you'd like to have on your page here, and state which activities your company specialises in."></textarea>
+                        </div>
+                    </div>
+                    <!-- register -->
+                    <div class="d-grid gap-2 col-6 mx-auto registerforminput">
+                        <button type="submit" class="btn btn-dark">
+                            Register Company
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
