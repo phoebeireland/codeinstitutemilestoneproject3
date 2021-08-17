@@ -28,7 +28,6 @@ def index():
 @app.route('/about')
 def about():
     return render_template('about.html')
-    
 
 
 @app.route('/contactus')
@@ -40,11 +39,14 @@ def contactus():
 def registercompany():
     return render_template('registercompany.html')
 
+
 @app.route('/forum')
 def forum():
     return render_template('forum.html')
 
 # Error Handling of 404 & 500
+
+
 @app.errorhandler(404)
 def response_404(exception):
     return render_template('404.html', exception=exception)
@@ -75,6 +77,9 @@ def joinus():
             return redirect(url_for("joinus"))
 
         register = {
+            "firstname": request.form.get("firstname").lower(),
+            "lastname": request.form.get("lastname").lower(),
+            "email": request.form.get("lastname"),
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
@@ -99,11 +104,11 @@ def login():
             # ensure hashed password matches user input
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
-                        session["username"] = request.form.get("username").lower()
-                        flash("Welcome, {}".format(
-                            request.form.get("username")))
-                        return redirect(url_for(
-                            "profile", username=session["username"]))
+                session["username"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(
+                    request.form.get("username")))
+                return redirect(url_for(
+                    "profile", username=session["username"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -226,7 +231,7 @@ def delete_category(category_id):
 
 if __name__ == "__main__":
     app.run(
-        host = os.environ.get('IP', '127.0.0.1'),
-        port = os.environ.get('PORT', '5000'),
+        host=os.environ.get('IP', '127.0.0.1'),
+        port=os.environ.get('PORT', '5000'),
         debug=True
     )
