@@ -2,5 +2,31 @@
 
 {% block content %}
 
+<section class="about">
+    <div class="container content">
+        <div class="row">
+            <div class="col-sm-12 text-center about-title">
+                <h2 id="joinuspageheader">Register your Company!</h2>
+            </div>
+        </div>
+        <div class="row about-row">
+            <div class="col-sm-12 text-center">
+                {% if 'username' in session %}
+                    <p class="page-desc">You are already logged in! This page is strictly for companies looking to join the site</p>
+                {% else %}
+                    <p class="page-desc">
+                        Registering your company with Rate Venture is crucial for connecting with prosepctive clients! 
+                        <br>
+                        As a registered company, you will have a company page where users can contact you directly, or 
+                        leave reviews once they've used you.
+                        <br>
+                        Register your company today!
+                    </p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
 
 {% endblock %}
