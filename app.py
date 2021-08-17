@@ -39,6 +39,10 @@ def contactus():
 def forum():
     return render_template('forum.html')
 
+@app.route('/company1')
+def company1():
+    return render_template('company1.html')
+
 # Error Handling of 404 & 500
 
 
@@ -117,8 +121,7 @@ def login():
                 session["username"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(
                     request.form.get("username")))
-                return redirect(url_for(
-                    "forum", username=session["username"]))
+                return redirect(url_for("forum", username=session["username"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
