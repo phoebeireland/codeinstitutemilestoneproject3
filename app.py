@@ -35,11 +35,6 @@ def contactus():
     return render_template('contactus.html')
 
 
-@app.route('/registercompany')
-def registercompany():
-    return render_template('registercompany.html')
-
-
 @app.route('/forum')
 def forum():
     return render_template('forum.html')
@@ -79,7 +74,7 @@ def joinus():
         register = {
             "firstname": request.form.get("firstname").lower(),
             "lastname": request.form.get("lastname").lower(),
-            "email": request.form.get("lastname"),
+            "email": request.form.get("email"),
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
@@ -91,6 +86,21 @@ def joinus():
         return redirect(url_for("profile", username=session["username"]))
 
     return render_template("joinus.html")
+
+@app.route("/registercompany", methods=["GET", "POST"])
+def registercompany():
+    if request.method == "POST":
+        register = {
+            "companyname": request.form.get("companyname").lower(),
+            "companywebsite": request.form.get("companywebsite").lower(),
+            "companynumber": request.form.get("companynumber"),
+            "companylocation": request.form.get("companylocation"),
+            "email": request.form.get("email"),
+            "companyinfo": request.form.get("companyinfo")
+        }
+        mongo.db.providers.insert_one(register)
+
+    return render_template('registercompany.html')
 
 
 @app.route("/login", methods=["GET", "POST"])
