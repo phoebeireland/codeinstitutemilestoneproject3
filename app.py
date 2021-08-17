@@ -30,14 +30,6 @@ def about():
     return render_template('about.html')
     
 
-@app.route('/joinus')
-def joinus():
-    return render_template('joinus.html')
-
-
-@app.route('/login')
-def login():
-    return render_template('login.html')
 
 @app.route('/contactus')
 def contactus():
@@ -63,7 +55,7 @@ def response_500(exception):
     return render_template('500.html', exception=exception)
 
 
-
+# this will need to be edited
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -71,8 +63,8 @@ def search():
     return render_template("tasks.html", tasks=tasks)
 
 
-@app.route("/register", methods=["GET", "POST"])
-def register():
+@app.route("/joinus", methods=["GET", "POST"])
+def joinus():
     if request.method == "POST":
         # check if username already exists in db
         existing_user = mongo.db.users.find_one(
@@ -89,15 +81,15 @@ def register():
         mongo.db.users.insert_one(register)
 
         # put the new user into 'session' cookie
-        session["user"] = request.form.get("username").lower()
+        session["username"] = request.form.get("username").lower()
         flash("Registration Successful!")
-        return redirect(url_for("profile", username=session["user"]))
+        return redirect(url_for("profile", username=session["username"]))
 
     return render_template("joinus.html")
 
 
 @app.route("/login", methods=["GET", "POST"])
-def log_in():
+def login():
     if request.method == "POST":
         # check if username exists in db
         existing_user = mongo.db.users.find_one(
@@ -107,11 +99,11 @@ def log_in():
             # ensure hashed password matches user input
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
-                        session["user"] = request.form.get("username").lower()
+                        session["username"] = request.form.get("username").lower()
                         flash("Welcome, {}".format(
                             request.form.get("username")))
                         return redirect(url_for(
-                            "profile", username=session["user"]))
+                            "profile", username=session["username"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -129,9 +121,9 @@ def log_in():
 def profile(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+        {"username": session["username"]})["username"]
 
-    if session["user"]:
+    if session["username"]:
         return render_template("profile.html", username=username)
 
     return redirect(url_for("login"))
@@ -141,7 +133,7 @@ def profile(username):
 def logout():
     # remove user from session cookie
     flash("You have been logged out")
-    session.pop("user")
+    session.pop("username")
     return redirect(url_for("login"))
 
 
@@ -155,7 +147,7 @@ def add_task():
             "task_description": request.form.get("task_description"),
             "is_urgent": is_urgent,
             "due_date": request.form.get("due_date"),
-            "created_by": session["user"]
+            "created_by": session["username"]
         }
         mongo.db.tasks.insert_one(task)
         flash("Task Successfully Added")
@@ -175,7 +167,7 @@ def edit_task(task_id):
             "task_description": request.form.get("task_description"),
             "is_urgent": is_urgent,
             "due_date": request.form.get("due_date"),
-            "created_by": session["user"]
+            "created_by": session["username"]
         }
         mongo.db.tasks.update({"_id": ObjectId(task_id)}, submit)
         flash("Task Successfully Updated")
