@@ -2,5 +2,68 @@
 
 {% block content %}
 
+<section class="about">
+    <div class="container content">
+        <div class="row">
+            <div class="col-sm-12 text-center about-title">
+                <h2 id="joinuspageheader">Register your Company!</h2>
+            </div>
+        </div>
+        <div class="row about-row">
+            <div class="col-sm-12 text-center">
+                {% if 'username' in session %}
+                <p class="page-desc">If you have a comment or recommendation for the website, please fill out the form
+                    below.</p>
+                {% else %}
+                <p class="page-desc">
+                    I don't know how you managed to find this page, but if you do have a comment or recommendation for
+                    the website, please fill out the form below.
+                </p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+
+        <div class="row" id="registercompanyform">
+            <form class="col-sm-12" method="POST" action="{{ url_for('registercompany') }}">
+                <div class="card-panel">
+                    <!-- username -->
+                    <div class="row">
+                        <div class="input-field col s12 joinusinput">
+                            <label for="username">Username</label>
+                            <input id="username" name="username" type="text" minlength="5" maxlength="15"
+                                pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        </div>
+                    </div>
+                    <!--email-->
+                    <div class="row">
+                        <div class="input-field col-sm-12 registerforminput">
+                            <label for="email">Email Address:</label>
+                            <input type="email" id="email" name="email_address" required />
+                        </div>
+                    </div>
+                    <!--text input area-->
+                    <div class="row">
+                        <div class="input-field col-sm-12 registerforminput">
+                            <h5 id="other-info-prompt">Any other information:</h5>
+                            <textarea name="any-other-info" rows="15" cols="30"
+                                placeholder="Add a company blurb you'd like to have on your page here, and state which activities your company specialises in."></textarea>
+                        </div>
+                    </div>
+                    <!-- submit -->
+                    <div class="d-grid gap-2 col-6 mx-auto registerforminput">
+                        <button type="submit" class="btn btn-dark">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
