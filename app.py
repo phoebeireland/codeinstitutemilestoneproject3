@@ -39,6 +39,7 @@ def contactus():
 def forum():
     return render_template('forum.html')
 
+
 @app.route('/company1')
 def company1():
     return render_template('company1.html')
