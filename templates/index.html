@@ -5,27 +5,7 @@
 
 <section class="about">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-12 log-alert text-center">
-                <!-- Alert to user notifying of successful logout. -->
-                {% with alerts = get_flashed_messages(with_categories=true) %}
-                    {% if alerts %}
-                        {% for category, alert in alerts %}
-                            <div class="alert alert-{{ category }} mt-5">
-                                {{ alert }}
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-                {% endwith %}
-            </div>
-        </div>
         <div class="row greeting">
-            {% if 'username' in session %}
-            <div class="col-sm-12 text-center">
-                <p>Welcome, {{ session['username'] }}</p>
-            </div>
-            {% endif %}
-
             <div class="col-sm-12 text-center" id= "welcomeheader">
                 <h1>Welcome to Rate Venture!</h1>
             </div>
