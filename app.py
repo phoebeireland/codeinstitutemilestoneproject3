@@ -41,7 +41,7 @@ def forum():
 
 
 @app.route('/companies')
-def company1():
+def companies():
     return render_template('companies.html')
 
 # Error Handling of 404 & 500
