@@ -6,32 +6,18 @@
 <section class="about">
     <div class="container">
         <div class="row greeting">
-            <div class="col-sm-12 text-center" id= "welcomeheader">
+            {% if 'username' in session %}
+            <div class="col-sm-12 text-center welcomeheader">
+                <h1>Welcome, {{ session['username'] }}!</h1>
+            </div>
+
+            {% else %}
+            <div class="col-sm-12 text-center welcomeheader">
                 <h1>Welcome to Rate Venture!</h1>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <p class="page-desc">
-                    At Rate Venture, we provide you with a space to discover new and exciting outdoor adventures near you!
-                    We recognise that it's sometimes hard to find a reputable outdoor adventure company for your family vacations. 
-                    
-                </p>
-            </div>
-            <div class="col-sm-12 text-center">
-                <p class="page-desc">
-                    This site was designed to promote the enjoyment of the outdoors. 
-                    It is designed to work on the go, and we all have mobile smartphones at our disposal,
-                    meaning you can look up companies and activities on the Forum at any time, with the touch of a button right
-                    from your own pocket! So go outside and start exploring the great outdoors!
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 brand-logo" aria-label="Brand Logo"></div>
+            {% endif %}
         </div>
     </div>
-
     <div class="container">
         <div class="row card-row" id="indexboxes">
             <div class="card home-card col-sm-12 col-md-6" id="indexbox1">
@@ -52,7 +38,7 @@
                     </p>
                     <p class="card-text hca-p2">
                         Become part of our community and find highly rated, reputable companies that will
-                        help make your next vacation a hit! 
+                        help make your next vacation a hit!
                     </p>
                     <a href="{{ url_for('joinus') }}" class="btn btn-dark">Join Us</a>
                     <p class="card-text">
@@ -60,8 +46,6 @@
                     </p>
                     <p class="card-text hca-p2">
                         Register with the website and be discovered by a wider range of customers!
-                        Once registered, you can start receiving reviews on your services, and get connected
-                        to new adventurers! 
                     </p>
                     <a href="{{ url_for('registercompany') }}" class="btn btn-dark">Register Company</a>
                     {% endif %}
@@ -72,7 +56,7 @@
                     {% if 'username' in session %}
                     <h5 class="card-title hca-title">Intrepid Adventurer</h5>
                     <p class="card-text">
-                       Help your fellow explorers by documenting your experiences and rating companies in our Forum.
+                        Help your fellow explorers by documenting your experiences and rating companies in our Forum.
                     </p>
                     <p class="card-text hca-p2">
                         Create your own reviews or read exisiting reviews to help you find the most
@@ -85,10 +69,10 @@
                         Returning user? Sign in here to jump back in and discover your next adventure!
                     </p>
                     <p class="card-text hca-p2">
-                        You will have the option to add to the forum by creating a review! Or read company 
+                        You will have the option to add to the forum by creating a review! Or read company
                         reviews from other users to help make your decision.
                     </p>
-                    <a href="{{ url_for('login') }}" class="btn btn-dark">Login</a>
+                    <a href="{{ url_for('login') }}" class="btn btn-dark indexloginbtn">Login</a>
                     {% endif %}
                 </div>
             </div>

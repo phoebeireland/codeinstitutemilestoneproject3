@@ -12,14 +12,14 @@
     font-family: 'Hahmlet', serif;
   }
 
-  #welcomeheader {
+  .welcomeheader {
       margin-top: 2rem;
       margin-bottom: 2rem;
   }
 
   #indexboxes {
-      margin-top: 2rem;
-      margin-bottom: 2rem;
+      margin-top: 4rem;
+      margin-bottom: 4rem;
   }
 
   #indexbox1 {
@@ -32,9 +32,19 @@
       color: ghostwhite;
   }
 
+  .indexloginbtn {
+    margin-bottom: 1rem;
+  }
   #aboutusheader {
     margin-top: 2rem;
     margin-bottom: 2rem;
+    text-decoration: underline;
+  }
+
+  #rateventurecompaniesheader {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-decoration: underline;
   }
 
   #aboutpageperson1 {
@@ -58,12 +68,21 @@
   #loginpageheader {
       margin-top: 2rem;
       margin-bottom: 2rem;
-  }
+      text-decoration: underline;  
+    }
 
   #joinuspageheader {
     margin-top: 2rem;
     margin-bottom: 2rem;
+    text-decoration: underline;
 }
+
+#registercompanypageheader {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-decoration: underline;
+}
+
 
 #registercompanyform {
   background: rgba(0, 0, 0, 0.473);
@@ -144,7 +163,14 @@
 
 #forumheading {
   margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  text-decoration: underline;
+}
+
+#contactuspageheader {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-decoration: underline;
 }
 
 #forumcreatepostarea {
