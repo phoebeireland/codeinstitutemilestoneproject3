@@ -72,6 +72,13 @@
   padding-bottom: 2rem;
 }
 
+#contactusform {
+  background: rgba(0, 0, 0, 0.473);
+  color: ghostwhite;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .registerforminput {
   margin-top: 1rem;
 }
@@ -120,6 +127,17 @@
   #internalservererrorbtn {
     text-align: center;
     margin-top: 2rem;
+}
+
+#createpostform {
+  background: rgba(0, 0, 0, 0.473);
+  color: ghostwhite;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.createpostforminput {
+  margin-top: 1rem;
 }
 
 

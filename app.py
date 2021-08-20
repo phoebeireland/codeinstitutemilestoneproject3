@@ -149,8 +149,8 @@ def createpost():
     if request.method == "POST":
         task = {
             "category_name": request.form.get("category_name"),
-            "task_name": request.form.get("task_name"),
-            "task_description": request.form.get("task_description"),
+            "post_name": request.form.get("post_name"),
+            "write_post": request.form.get("write_post"),
             "created_by": session["username"]
         }
         mongo.db.tasks.insert_one(task)
