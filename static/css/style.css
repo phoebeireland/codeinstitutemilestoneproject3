@@ -109,6 +109,8 @@
   background: rgba(0, 0, 0, 0.473);
   color: ghostwhite;
   margin-top: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
   #sitenotfoundheading {
@@ -138,6 +140,24 @@
 
 .createpostforminput {
   margin-top: 1rem;
+}
+
+#forumheading {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+#forumcreatepostarea {
+  margin-bottom: 2rem;
+}
+
+#forumpagesearcharea {
+  background: rgba(0, 0, 0, 0.473);
+  color: ghostwhite;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 
