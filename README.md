@@ -154,19 +154,16 @@ Created by Phoebe Ireland
 The content of this website was created by Phoebe Ireland, with the exception of the following:
 * [Google Fonts](https://fonts.google.com/)
   * Used to apply the Hahmlet font to all pages
-* [Coolors](https://coolors.co/)
-  * Used to create the colour scheme for the page
 * [Unsplash](https://unsplash.com/)
   * Used for the images found on the site
 * [Bootstrap](https://getbootstrap.com/)
   * Used to create the Navbar
-  * 
 * [favicon.io](https://favicon.io/)
   * Used to create the favicon
 * [jQuery](https://jquery.com/)
   * Uses jQuery for 
-* Code Institute's Love Maths Project
-  * Used to figure out how to display and calculate the score.
+* Code Institute's Task Manager Project
+  * Used to model most of the code for the site.
 * [Emailjs](https://www.emailjs.com/)
   * Used to connect the contact form to an email service.
 
