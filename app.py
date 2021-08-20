@@ -40,9 +40,9 @@ def forum():
     return render_template('forum.html')
 
 
-@app.route('/company1')
+@app.route('/companies')
 def company1():
-    return render_template('company1.html')
+    return render_template('companies.html')
 
 # Error Handling of 404 & 500
 
