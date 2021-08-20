@@ -2,24 +2,74 @@
 
 {% block content %}
 
-<section>
+<section class="content">
     <div class="container">
-        <h1 class="text-center">Rate Venture Forum</h1>
-        <div class="row card-row">
-            <div class="card home-card col-sm-12 companycards">
-                <div class="card-body text-center">
-                    <h5>Company 1</h5>
-                    <p class="card-text">
-                        If you're a returning user and you have a comment for us, let us know!
+        <div class="row">
+            <div class="col-12 text-center about-title">
+                <h2>Rate Venture Forum</h2>
+            </div>
+            <div class="col-12">
+                <div class="text-center">
+                    <h5>Create a Post</h5>
+                    <p>
+                        Click the button below to make a Forum post!
                     </p>
-                    <p class="card-text hca-p2">
-                        Submit a recommentdation or comment for the website here!
-                    </p>
+                    <a href="{{ url_for('createpost') }}" class="btn btn-dark">Create a Post</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <h5 class="text-center">Search posts</h5>
+            </div>
+            <div class="col-lg-6">
+                <div class="card home-card companycards">
+                    <div class="card-body text-center">
+                        <h5>Company 1</h5>
+                        <p class="card-text">
+                            If you're a returning user and you have a comment for us, let us know!
+                        </p>
+                        <p class="card-text hca-p2">
+                            Submit a recommentdation or comment for the website here!
+                        </p>
+                    </div>
+                </div>
+                <div class="card home-card companycards">
+                    <div class="card-body text-center">
+                        <h5>Company 2</h5>
+                        <p class="card-text">
+                            If you're a returning user and you have a comment for us, let us know!
+                        </p>
+                        <p class="card-text hca-p2">
+                            Submit a recommentdation or comment for the website here!
+                        </p>
+                    </div>
+                </div>
+                <div class="card home-card companycards">
+                    <div class="card-body text-center">
+                        <h5>Company 3</h5>
+                        <p class="card-text">
+                            If you're a returning user and you have a comment for us, let us know!
+                        </p>
+                        <p class="card-text hca-p2">
+                            Submit a recommentdation or comment for the website here!
+                        </p>
+                    </div>
+                </div>
+                <div class="card home-card companycards">
+                    <div class="card-body text-center">
+                        <h5>Company 4</h5>
+                        <p class="card-text">
+                            If you're a returning user and you have a comment for us, let us know!
+                        </p>
+                        <p class="card-text hca-p2">
+                            Submit a recommentdation or comment for the website here!
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
 
 {% endblock %}
