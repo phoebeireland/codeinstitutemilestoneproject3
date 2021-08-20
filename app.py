@@ -144,16 +144,13 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_task", methods=["GET", "POST"])
-def add_task():
+@app.route("/createpost", methods=["GET", "POST"])
+def createpost():
     if request.method == "POST":
-        is_urgent = "on" if request.form.get("is_urgent") else "off"
         task = {
             "category_name": request.form.get("category_name"),
             "task_name": request.form.get("task_name"),
             "task_description": request.form.get("task_description"),
-            "is_urgent": is_urgent,
-            "due_date": request.form.get("due_date"),
             "created_by": session["username"]
         }
         mongo.db.tasks.insert_one(task)
@@ -161,7 +158,7 @@ def add_task():
         return redirect(url_for("get_tasks"))
 
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("add_task.html", categories=categories)
+    return render_template("createpost.html", categories=categories)
 
 
 @app.route("/edit_task/<task_id>", methods=["GET", "POST"])
