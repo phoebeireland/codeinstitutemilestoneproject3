@@ -28,12 +28,12 @@
 <section>
     <div class="container">
 
-        <div class="row" id="registercompanyform">
+        <div class="row" id="contactusform">
             <form class="col-sm-12" method="POST" action="{{ url_for('contactus') }}">
                 <div class="card-panel">
                     <!-- username -->
                     <div class="row">
-                        <div class="input-field col s12 joinusinput">
+                        <div class="input-field col s12 joinusinput text-center">
                             <label for="username">Username</label>
                             <input id="username" name="username" type="text" minlength="5" maxlength="15"
                                 pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
@@ -41,16 +41,16 @@
                     </div>
                     <!--email-->
                     <div class="row">
-                        <div class="input-field col-sm-12 registerforminput">
+                        <div class="input-field col-sm-12 registerforminput text-center">
                             <label for="email">Email Address:</label>
                             <input type="email" id="email" name="email_address" required />
                         </div>
                     </div>
                     <!--text input area-->
                     <div class="row">
-                        <div class="input-field col-sm-12 registerforminput">
-                            <h5 id="other-info-prompt">Any other information:</h5>
-                            <textarea name="any-other-info" rows="15" cols="30"
+                        <div class="input-field col-sm-12 registerforminput text-center">
+                            <h6 id="other-info-prompt">Comment:</h6>
+                            <textarea name="any-other-info" rows="10" cols="40"
                                 placeholder="Type your comment here"></textarea>
                         </div>
                     </div>
