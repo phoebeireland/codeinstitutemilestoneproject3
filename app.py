@@ -60,14 +60,14 @@ def response_500(exception):
 @app.route("/get_posts")
 def get_posts():
     posts = list(mongo.db.posts.find())
-    return render_template("tasks.html", tasks=posts)
+    return render_template("forum.html", posts=posts)
 
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    tasks = list(mongo.db.posts.find({"$text": {"$search": query}}))
-    return render_template("forum.html", tasks=tasks)
+    posts = list(mongo.db.posts.find({"$text": {"$search": query}}))
+    return render_template("forum.html", posts=posts)
 
 
 @app.route("/joinus", methods=["GET", "POST"])
@@ -155,7 +155,7 @@ def createpost():
         post = {
             "category_name": request.form.get("category_name"),
             "post_name": request.form.get("post_name"),
-            "write_post": request.form.get("write_post"),
+            "the_post": request.form.get("the_post"),
             "created_by": session["username"]
         }
         mongo.db.posts.insert_one(post)
