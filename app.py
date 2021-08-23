@@ -57,12 +57,17 @@ def response_500(exception):
     return render_template('500.html', exception=exception)
 
 
-# this will need to be edited
+@app.route("/get_posts")
+def get_posts():
+    posts = list(mongo.db.posts.find())
+    return render_template("tasks.html", tasks=posts)
+
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    tasks = list(mongo.db.tasks.find({"$text": {"$search": query}}))
-    return render_template("tasks.html", tasks=tasks)
+    tasks = list(mongo.db.posts.find({"$text": {"$search": query}}))
+    return render_template("forum.html", tasks=tasks)
 
 
 @app.route("/joinus", methods=["GET", "POST"])
@@ -153,9 +158,9 @@ def createpost():
             "write_post": request.form.get("write_post"),
             "created_by": session["username"]
         }
-        mongo.db.tasks.insert_one(post)
+        mongo.db.posts.insert_one(post)
         flash("Post Successfully Added")
-        return redirect(url_for("get_tasks"))
+        return redirect(url_for("get_posts"))
 
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("createpost.html", categories=categories)
@@ -173,19 +178,19 @@ def edit_task(task_id):
             "due_date": request.form.get("due_date"),
             "created_by": session["username"]
         }
-        mongo.db.tasks.update({"_id": ObjectId(task_id)}, submit)
+        mongo.db.posts.update({"_id": ObjectId(task_id)}, submit)
         flash("Task Successfully Updated")
 
-    task = mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
+    task = mongo.db.posts.find_one({"_id": ObjectId(task_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("edit_task.html", task=task, categories=categories)
 
 
 @app.route("/delete_task/<task_id>")
 def delete_task(task_id):
-    mongo.db.tasks.remove({"_id": ObjectId(task_id)})
+    mongo.db.posts.remove({"_id": ObjectId(task_id)})
     flash("Task Successfully Deleted")
-    return redirect(url_for("get_tasks"))
+    return redirect(url_for("get_posts"))
 
 
 @app.route("/get_categories")
