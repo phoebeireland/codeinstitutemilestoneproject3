@@ -147,14 +147,14 @@ def logout():
 @app.route("/createpost", methods=["GET", "POST"])
 def createpost():
     if request.method == "POST":
-        task = {
+        post = {
             "category_name": request.form.get("category_name"),
             "post_name": request.form.get("post_name"),
             "write_post": request.form.get("write_post"),
             "created_by": session["username"]
         }
-        mongo.db.tasks.insert_one(task)
-        flash("Task Successfully Added")
+        mongo.db.tasks.insert_one(post)
+        flash("Post Successfully Added")
         return redirect(url_for("get_tasks"))
 
     categories = mongo.db.categories.find().sort("category_name", 1)
