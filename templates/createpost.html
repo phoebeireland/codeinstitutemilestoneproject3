@@ -9,7 +9,7 @@
             <!-- category selection -->
             <div class="row">
                 <div class="input-field col s12 createpostforminput text-center">
-                    <label for="category_name">Post Category</label>
+                    <label for="category_name">Post Category: </label>
                     <select id="category_name" name="category_name" class="validate" required>
                         <option value="" disabled selected>Choose Category</option>
                         {% for category in categories %}
@@ -21,7 +21,7 @@
             <!-- task name -->
             <div class="row">
                 <div class="input-field col s12 createpostforminput text-center">
-                    <label for="post_name">Task Name</label>
+                    <label for="post_name">Post Name: </label>
                     <input id="post_name" name="post_name" minlength="5" maxlength="50" type="text" class="validate"
                         required>
                 </div>
@@ -29,7 +29,7 @@
             <!-- task description -->
             <div class="row">
                 <div class="input-field col s12 createpostforminput text-center">
-                    <h6 id="other-info-prompt">Write Post:</h6>
+                    <h6 id="other-info-prompt">Write Post: </h6>
                     <textarea id="write_post" name="write_post" minlength="5" maxlength="200" rows="10" cols="40"
                         class="materialize-textarea validate textboxarea" required></textarea>
                 </div>
