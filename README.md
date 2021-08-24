@@ -46,24 +46,29 @@ The main colours used on the site are:
 * 
 * 
 
-The colour scheme for the game was created using Coolers. 
 
 ### Styling
 
 
 
 ## Wireframe Designs
-Please keep in mind that the drawings were the first stage of the design. and the actual website may look somewhat different from the drawings. Where the two differ, I offer an explanation as to why. 
-
-### The Project Overview 
-![journal page of the Overview](assets/images/project2overview.jpg "Overview journal page")
-This image shows the general requirements for this project as the top. Below is the layout plan of the pages for the project.
+I have provided additional information reagarding the wireframes below each picture. Please refer to them to explain where a wireframe may differ from the published product, or for choices behind the designs.
 
 
-### Game Description and The Desktop View
-![journal page of the Homepage](assets/images/descriptionanddesktopview.jpg "Desktop journal page")
-This image shows the idea behind the idle clicker game  as well as the proposed desktop view for the game. 
+### Homepage
+![Wireframe of the Homepage](assets/images/descriptionanddesktopview.jpg "wireframe of the main hopmepage for the site")
+This image shows the initial idea for the main page of the website. This is the page that the users would see if they were not logged in or they did not yet have an account.
+The homepage would only change slightly if the user did have an account and was logged in- ie. the two card boxes with information and buttons would change accordingly if a user was logged into their account. In addition, the navbar at the top would also display slightly different options depending on whether the user was logged in or not. 
 
+
+### About Page
+![Wireframe of the About page](assets/images/descriptionanddesktopview.jpg "wireframe of the about page")
+This image shows the inital idea for the about page. This is the page that explains to the unregistered/ not logged in user what the site is about and also offers some testimonials from users who have enjoyed the website. As is noticable, this design in the final product differs from the initial concept with the addition of the user accounts and a condensed paragraph regarding the site. Rather than allow it to fill the whole page, I moved it to the top left section, and added in a scenic picture to the right of the description. 
+
+
+### Join Us Page
+![Wireframe of the Join Us page](assets/images/descriptionanddesktopview.jpg "wireframe of the join us page")
+This image is the idea for the join us page. All in all, the page didn't change that much from the original concept to the executed version. THe only slight differenct would be the text at the top of the page before the form starts. 
 
 
 # Features
@@ -113,7 +118,7 @@ The EmailJS extenstion was tested using a sample email address and sample messag
 
 ## Small Problems (that were fixed)
 * For some reason, the background image was being really difficult and was refusing to fit the page. This was eventually fixed by adding a couple of lines to the css code relating to the background image size (cover), background-repeat (no-repeat) and background-attachment (fixed).
-* 
+* The login button was not loading the correct function, so the posts were not showing up on the forum when the page was loaded through the login button. This was fixed by making the login function call the function `get_posts` rather than `forum`. 
 * 
 * 
 
@@ -166,6 +171,8 @@ The content of this website was created by Phoebe Ireland, with the exception of
   * Used to model most of the code for the site.
 * [Emailjs](https://www.emailjs.com/)
   * Used to connect the contact form to an email service.
+* [Balsamiq](https://balsamiq.com/)
+  * Used to create the wireframes.
 
 
    All of the content that was taken from other sources was altered to fit the use of this website where necessary.
