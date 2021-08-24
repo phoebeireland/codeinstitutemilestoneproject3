@@ -186,6 +186,14 @@
   padding-bottom: 1rem;
 }
 
+#searchbox {
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+#searchbuttons {
+  margin-top: 1rem;
+}
 
     /*Footer*/
 .footer{

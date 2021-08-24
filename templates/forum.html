@@ -25,11 +25,10 @@
                     <div class="row card-panel grey lighten-5">
                         <form action="{{ url_for('search') }}" method="post" class="col s12">
                             <div class="row valign-wrapper center-align">
-                                <div class="input-field col s12 m8">
+                                <div class="input-field col s12 m8" id="searchbox">
                                     <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                                    <label for="query"></label>
                                 </div>
-                                <div class="col s12">
+                                <div class="col s12" id="searchbuttons">
                                     <a href="{{ url_for('get_posts') }}" class="btn btn-dark">Reset</a>
                                     <button type="submit" class="btn btn-dark">
                                         Search
@@ -42,11 +41,9 @@
             </div>
             <div class="col-lg-8">
                 <div class="card home-card companycards">
+                    {% if posts|length > 0 %}
                     <div class="card-body text-center">
-                        {% if posts|length > 0 %}
-                        <ul class="collapsible">
                             {% for post in posts %}
-                            <li>
                                 <div class="collapsible-header white-text light-blue darken-4 text-shadow">
                                     <div class="col s3">
                                         {% if session.user|lower == post.created_by|lower %}
@@ -55,12 +52,11 @@
                                         {% endif %}
                                     </div>
                                 </div>
-                                <div class="collapsible-body">
+                                <div class="body">
                                     <strong>{{ post.category_name }}</strong>
                                     <p>{{ post.the_post }}</p>
                                     <p><em>by: {{ post.created_by }}</em></p>
                                 </div>
-                            </li>
                             {% endfor %}
                         </ul>
                         {% else %}

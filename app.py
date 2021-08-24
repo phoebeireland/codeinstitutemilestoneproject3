@@ -30,8 +30,15 @@ def about():
     return render_template('about.html')
 
 
-@app.route('/contactus')
+@app.route('/contactus', methods=["GET", "POST"])
 def contactus():
+    if request.method == "POST":
+        register = {
+            "username": request.form.get("username").lower(),
+            "email": request.form.get("email"),
+            "comment": request.form.get("comment")
+        }
+        mongo.db.contactuspage.insert_one(register)
     return render_template('contactus.html')
 
 
@@ -96,6 +103,7 @@ def joinus():
         return redirect(url_for("forum"))
 
     return render_template("joinus.html")
+
 
 @app.route("/registercompany", methods=["GET", "POST"])
 def registercompany():
@@ -195,8 +203,6 @@ def deletepost(post_id):
 def get_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
-
-
 
 
 if __name__ == "__main__":
