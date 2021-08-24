@@ -11,45 +11,45 @@
 					<select id="category_name" name="category_name" class="validate" required>
                         <option value="" disabled>Choose Category</option>
                         {% for category in categories %}
-                            {% if category.category_name == task.category_name %}
+                            {% if category.category_name == posts.category_name %}
                                 <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
                             {% else %}
                                 <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                             {% endif %}
                         {% endfor %}
                     </select>
-					<label for="category_name">Task Category</label>
+					<label for="category_name">Post Category</label>
 				</div>
 			</div>
             <!-- Post name -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="task_name" name="task_name" minlength="5" maxlength="50"
-                        value="{{ task.task_name }}" type="text" class="validate" required>
-                    <label for="task_name">Task Name</label>
+                    <input id="post_name" name="post_name" minlength="5" maxlength="50"
+                        value="{{ posts.post_name }}" type="text" class="validate" required>
+                    <label for="post_name">Post Name</label>
                 </div>
             </div>
             <!-- Post description -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
-                    <textarea id="task_description" name="task_description" minlength="5"
+                    <textarea id="the_post" name="the_post" minlength="5"
                         maxlength="200" class="materialize-textarea validate" required>
-                        {{- task.task_description -}}
+                        {{- posts.the_post -}}
                     </textarea>
-                    <label for="task_description">Task Description</label>
+                    <label for="k">Post Description</label>
                 </div>
             </div>
             <!-- submit button -->
             <div class="row">
                 <div class="col s12 center-align">
                     <!-- cancel button -->
-                    <a href="{{ url_for('get_tasks') }}" class="btn-large red text-shadow">
+                    <a href="{{ url_for('get_posts') }}" class="btn-large red text-shadow">
                         Cancel
                     </a>
                     <button type="submit" class="btn btn-dark">
-                        Edit Task
+                        Edit Post
                     </button>
                 </div>
             </div>
