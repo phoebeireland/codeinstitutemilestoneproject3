@@ -186,9 +186,9 @@ def editpost(post_id):
         mongo.db.posts.update({"_id": ObjectId(post_id)}, submit)
         flash("Post Successfully Updated")
 
-    post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+    posts = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("editpost.html", post=post, categories=categories)
+    return render_template("editpost.html", posts=posts, categories=categories)
 
 
 @app.route("/deletepost/<post_id>")
