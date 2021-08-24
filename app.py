@@ -20,6 +20,12 @@ mongo = PyMongo(app)
 
 # Static page routes
 @app.route('/')
+@app.route("/get_posts")
+def get_posts():
+    posts = list(mongo.db.posts.find())
+    return render_template("forum.html", posts=posts)
+
+    
 @app.route('/index')
 def index():
     return render_template('index.html')
@@ -62,12 +68,6 @@ def response_404(exception):
 @app.errorhandler(500)
 def response_500(exception):
     return render_template('500.html', exception=exception)
-
-
-@app.route("/get_posts")
-def get_posts():
-    posts = list(mongo.db.posts.find())
-    return render_template("forum.html", posts=posts)
 
 
 @app.route("/search", methods=["GET", "POST"])

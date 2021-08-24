@@ -44,19 +44,15 @@
                 {% for post in posts %}
                 <div class="card home-card companycards">
                     <div class="card-body text-center">
-                        <div class="body">
                             <strong>{{ post.post_name }}</strong>
                             <p> {{ post.category_name }}</p>
                             <p>{{ post.the_post }}</p>
                             <p><em>by: {{ post.created_by }}</em></p>
                             {% if session.user|lower == posts.created_by|lower %}
-                            <a href="{{ url_for('deletepost', post_id=post._id) }}"
-                                class="btn btn-dark">Delete
+                            <a href="{{ url_for('deletepost', post_id=post._id) }}" class="btn btn-dark">Delete
                                 Post</a>
-                            <a href="{{ url_for('editpost', post_id=post._id) }}"
-                                class="btn btn-dark">Edit</a>
+                            <a href="{{ url_for('editpost', post_id=post._id) }}" class="btn btn-dark">Edit</a>
                             {% endif %}
-                        </div>
                         {% endfor %}
                         {% else %}
                         <h3 class="red-text text-darken-4 text-center">No Results Found</h3>
