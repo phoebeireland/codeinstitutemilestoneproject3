@@ -177,7 +177,6 @@ def createpost():
 @app.route("/editpost/<post_id>", methods=["GET", "POST"])
 def editpost(post_id):
     if request.method == "POST":
-        is_urgent = "on" if request.form.get("is_urgent") else "off"
         submit = {
             "category_name": request.form.get("category_name"),
             "post_name": request.form.get("post_name"),
