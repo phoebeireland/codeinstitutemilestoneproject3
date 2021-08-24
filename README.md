@@ -139,8 +139,8 @@ The EmailJS extenstion was tested using a sample email address and sample messag
 ## Small Problems (that were fixed)
 * For some reason, the background image was being really difficult and was refusing to fit the page. This was eventually fixed by adding a couple of lines to the css code relating to the background image size (cover), background-repeat (no-repeat) and background-attachment (fixed).
 * The login button was not loading the correct function, so the posts were not showing up on the forum when the page was loaded through the login button. This was fixed by making the login function call the function `get_posts` rather than `forum`. 
-* 
-* 
+* On the Forum page, initially all of the forum posts were being written into one card. After some tinkering, the posts were on their own carsd, but they were being nested- so the first post contained the second post that was in its own card, which held the third post which was in its own card an so on. This was fixed by moving the `{% endfor %}`, `{% else %}`, No REsults line and the `{% endif %}` outside of the card div.
+* ON the Forum page, the Delete and Edit buttons were not showing up. This was momentarily fixed by changing `post.created_by` to `posts.created_by`, which then lead to the buttons always showing up regardless of whether the logged in user had created the post or not. This was fixed by returning to `post.created_by` and instead changing the `session.user` to `session.username`, since `username` was the term used in the `app.py` file, instead of `user`. 
 
 
 # Deployment
