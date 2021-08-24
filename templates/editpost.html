@@ -1,59 +1,58 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="light-blue-text text-darken-4 text-center">Edit Post</h3>
+<h3 class="light-blue-text text-darken-4 text-center">Edit Post</h3>
 
-    <div class="row card-panel grey lighten-5">
-        <form class="col s12" method="POST" action="{{ url_for('editpost', post_id=post_id) }}">
-            <!-- category selection -->
-			<div class="row">
-				<div class="input-field col s12">
-					<select id="category_name" name="category_name" class="validate" required>
-                        <option value="" disabled>Choose Category</option>
-                        {% for category in categories %}
-                            {% if category.category_name == posts.category_name %}
-                                <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
-                            {% else %}
-                                <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                            {% endif %}
-                        {% endfor %}
-                    </select>
-					<label for="category_name">Post Category</label>
-				</div>
-			</div>
-            <!-- Post name -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
-                    <input id="post_name" name="post_name" minlength="5" maxlength="50"
-                        value="{{ posts.post_name }}" type="text" class="validate" required>
-                    <label for="post_name">Post Name</label>
-                </div>
+<div class="row card-panel grey lighten-5" id="editpostform">
+    <form class="col s12" method="POST" action="{{ url_for('editpost', post_id=post_id) }}">
+        <!-- category selection -->
+        <div class="row">
+            <div class="input-field col s12 text-center editpostforminput">
+                <label for="category_name">Post Category</label>
+                <select id="category_name" name="category_name" class="validate" required>
+                    <option value="" disabled>Choose Category</option>
+                    {% for category in categories %}
+                    {% if category.category_name == posts.category_name %}
+                    <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                    {% else %}
+                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                    {% endif %}
+                    {% endfor %}
+                </select>
             </div>
-            <!-- Post description -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
-                    <textarea id="the_post" name="the_post" minlength="5"
-                        maxlength="200" class="materialize-textarea validate" required>
+        </div>
+        <!-- Post name -->
+        <div class="row">
+            <div class="input-field col s12 text-center editpostforminput">
+                <label for="post_name">Post Name</label>
+                <input id="post_name" name="post_name" value="{{ posts.post_name }}"
+                    type="text" class="validate" required>
+            </div>
+        </div>
+        <!-- The Post -->
+        <div class="row">
+            <div class="input-field col s12 text-center editpostforminput">
+                <h6 id="other-info-prompt">Write Post: </h6>
+                <textarea id="the_post" name="the_post" rows="10" cols="40"
+                class="materialize-textarea validate textboxarea"  required>
                         {{- posts.the_post -}}
                     </textarea>
-                    <label for="k">Post Description</label>
-                </div>
             </div>
-            <!-- submit button -->
-            <div class="row">
-                <div class="col s12 center-align">
-                    <!-- cancel button -->
-                    <a href="{{ url_for('get_posts') }}" class="btn-large red text-shadow">
-                        Cancel
-                    </a>
-                    <button type="submit" class="btn btn-dark">
-                        Edit Post
-                    </button>
-                </div>
+        </div>
+        <!-- submit button -->
+        <div class="row">
+            <div class="col s12 text-center editpostbtns">
+                <!-- cancel button -->
+                <a href="{{ url_for('get_posts') }}" class="btn btn-dark">
+                    Cancel
+                </a>
+                <!--the submit button-->
+                <button type="submit" class="btn btn-dark">
+                    Edit Post
+                </button>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
+</div>
 
 {% endblock %}

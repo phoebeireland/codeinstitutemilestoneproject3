@@ -161,6 +161,21 @@
   margin-top: 1rem;
 }
 
+#editpostform {
+  background: rgba(0, 0, 0, 0.473);
+  color: ghostwhite;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.editpostforminput {
+  margin-top: 1rem;
+}
+
+.editpostbtns {
+  margin-top: 1rem;
+}
+
 #forumheading {
   margin-top: 2rem;
   margin-bottom: 2rem;
