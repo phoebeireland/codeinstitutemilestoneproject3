@@ -40,28 +40,26 @@
                 </div>
             </div>
             <div class="col-lg-8">
+                {% if posts|length > 0 %}
+                {% for post in posts %}
                 <div class="card home-card companycards">
-                    {% if posts|length > 0 %}
                     <div class="card-body text-center">
-                            {% for post in posts %}
-                                <div class="collapsible-header white-text light-blue darken-4 text-shadow">
-                                    <div class="col s3">
-                                        {% if session.user|lower == post.created_by|lower %}
-                                            <a href="{{ url_for('deletepost', post_id=post._id) }}" class="btn-small green accent-4">Delete Post</a>
-                                            <a href="{{ url_for('editpost', post_id=post._id) }}" class="btn-small light-blue lighten-1">Edit</a>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                                <div class="body">
-                                    <strong>{{ post.post_name }}</strong>
-                                    <p> {{ post.category_name }}</p>
-                                    <p>{{ post.the_post }}</p>
-                                    <p><em>by: {{ post.created_by }}</em></p>
-                                </div>
-                            {% endfor %}
-                        </ul>
+                        <div class="body">
+                            <strong>{{ post.post_name }}</strong>
+                            <p> {{ post.category_name }}</p>
+                            <p>{{ post.the_post }}</p>
+                            <p><em>by: {{ post.created_by }}</em></p>
+                            {% if session.user|lower == posts.created_by|lower %}
+                            <a href="{{ url_for('deletepost', post_id=post._id) }}"
+                                class="btn btn-dark">Delete
+                                Post</a>
+                            <a href="{{ url_for('editpost', post_id=post._id) }}"
+                                class="btn btn-dark">Edit</a>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
                         {% else %}
-                            <h3 class="red-text text-darken-4 text-center">No Results Found</h3>
+                        <h3 class="red-text text-darken-4 text-center">No Results Found</h3>
                         {% endif %}
                     </div>
                 </div>

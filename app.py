@@ -44,7 +44,7 @@ def contactus():
 
 @app.route('/forum')
 def forum():
-    return render_template('forum.html')
+    return redirect(url_for("get_posts"))
 
 
 @app.route('/companies')
@@ -74,7 +74,7 @@ def get_posts():
 def search():
     query = request.form.get("query")
     posts = list(mongo.db.posts.find({"$text": {"$search": query}}))
-    return render_template("forum.html", posts=posts)
+    return redirect(url_for("get_posts", posts=posts))
 
 
 @app.route("/joinus", methods=["GET", "POST"])
@@ -100,7 +100,7 @@ def joinus():
         # put the new user into 'session' cookie
         session["username"] = request.form.get("username").lower()
         flash("Registration Successful!")
-        return redirect(url_for("forum"))
+        return redirect(url_for("get_posts"))
 
     return render_template("joinus.html")
 
