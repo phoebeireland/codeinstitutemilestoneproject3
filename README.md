@@ -62,28 +62,33 @@ The homepage would only change slightly if the user did have an account and was 
 
 
 ### About Page
-![Wireframe of the About page](static/images/homepagewireframe.jpg "wireframe of the about page")
+![Wireframe of the About page](static/images/aboutpagewireframe.jpg "wireframe of the about page")
 This image shows the inital idea for the about page. This is the page that explains to the unregistered/ not logged in user what the site is about and also offers some testimonials from users who have enjoyed the website. As is noticable, this design in the final product differs from the initial concept with the addition of the user accounts and a condensed paragraph regarding the site. Rather than allow it to fill the whole page, I moved it to the top left section, and added in a scenic picture to the right of the description. 
 
 
 ### Join Us Page
-![Wireframe of the Join Us page](static/images/homepagewireframe.jpg "wireframe of the join us page")
+![Wireframe of the Join Us page](static/images/joiniuspagewireframe.jpg "wireframe of the join us page")
 This image is the idea for the join us page. All in all, the page didn't change that much from the original concept to the executed version. THe only slight differenct would be the text at the top of the page before the form starts. 
 
 ### Login Page
-![Wireframe of the Login page](static/images/homepagewireframe.jpg "wireframe of the join us page")
+![Wireframe of the Login page](static/images/loginpagewireframe.jpg "wireframe of the join us page")
+This image is the idea for the login us page. All in all, the page didn't change that much from the original concept to the executed version. THe only slight differenct would be the text at the top of the page before the form starts. 
 
 ### Forum Page
-![Wireframe of the Forum page](static/images/homepagewireframe.jpg "wireframe of the forum page")
+![Wireframe of the Forum page](static/images/forumpagewireframe.jpg "wireframe of the forum page")
+This images is the idea for the forum page. It didn't really change that much from the initial design. The only difference would be the addition of the Create Post section in the deployed page that is not in the wireframe. 
 
 ### Companies Page
-![Wireframe of the Compmanies page](static/images/homepagewireframe.jpg "wireframe of the companies page")
+![Wireframe of the Compmanies page](static/images/companiespagewireframe.jpg "wireframe of the companies page")
+This image is of the inital idea for the Companies page. The design was relatively simple and the finished product resembles the wireframe. 
 
 ### Register Companies Page
-![Wireframe of the Register Companies page](static/images/homepagewireframe.jpg "wireframe of the register companies page")
+![Wireframe of the Register Companies page](static/images/registercompaniespagewireframe.jpg "wireframe of the register companies page")
+Ths image is the idea for the Register Company form page. In the end, I decided to simplify the form by ommitting te checklist that is shown in the image. It made more sense to take that section out, as it was complicating the form in an unnecessary way for the user. This function was satisfied by the comment box in which the company looking ot register could specify for themselves what services they offered. 
 
 ### Contact Us Page
-![Wireframe of the Contact us page](static/images/homepagewireframe.jpg "wireframe of the contact us page")
+![Wireframe of the Contact us page](static/images/contactuspagewireframe.jpg "wireframe of the contact us page")
+This is the wireframe for the contact us page. The form ended up being exactly the same on the deployed website as it is in the picture above. 
 
 
 # Features
