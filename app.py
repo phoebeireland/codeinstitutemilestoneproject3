@@ -166,8 +166,8 @@ def createpost():
     return render_template("createpost.html", categories=categories)
 
 
-@app.route("/edit_task/<task_id>", methods=["GET", "POST"])
-def edit_task(task_id):
+@app.route("/editpost/<post_id>", methods=["GET", "POST"])
+def editpost(post_id):
     if request.method == "POST":
         is_urgent = "on" if request.form.get("is_urgent") else "off"
         submit = {
@@ -178,17 +178,17 @@ def edit_task(task_id):
             "due_date": request.form.get("due_date"),
             "created_by": session["username"]
         }
-        mongo.db.posts.update({"_id": ObjectId(task_id)}, submit)
+        mongo.db.posts.update({"_id": ObjectId(post_id)}, submit)
         flash("Task Successfully Updated")
 
-    task = mongo.db.posts.find_one({"_id": ObjectId(task_id)})
+    task = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("edit_task.html", task=task, categories=categories)
+    return render_template("editpost.html", task=task, categories=categories)
 
 
-@app.route("/delete_task/<task_id>")
-def delete_task(task_id):
-    mongo.db.posts.remove({"_id": ObjectId(task_id)})
+@app.route("/delete_task/<post_id>")
+def delete_task(post_id):
+    mongo.db.posts.remove({"_id": ObjectId(post_id)})
     flash("Task Successfully Deleted")
     return redirect(url_for("get_posts"))
 
