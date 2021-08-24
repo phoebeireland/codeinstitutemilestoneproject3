@@ -183,8 +183,10 @@ def editpost(post_id):
             "the_post": request.form.get("the_post"),
             "created_by": session["username"]
         }
+        print(submit)
         mongo.db.posts.update({"_id": ObjectId(post_id)}, submit)
         flash("Post Successfully Updated")
+        return redirect(url_for("get_posts"))
 
     posts = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
