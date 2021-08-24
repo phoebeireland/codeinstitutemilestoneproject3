@@ -56,11 +56,12 @@
                     {% if 'username' in session %}
                     <h5 class="card-title hca-title">Intrepid Adventurer</h5>
                     <p class="card-text">
-                        Help your fellow explorers by documenting your experiences and rating companies in our Forum.
+                        Help your fellow explorers by sharing your experiences and rating companies in our Forum.
                     </p>
                     <p class="card-text hca-p2">
                         Create your own reviews or read exisiting reviews to help you find the most
-                        suitable company for you or your family's needs.
+                        suitable company for you or your family's needs, or simply ask for advice for an upcoming trip
+                        or new pice of gear!
                     </p>
                     <a href="{{ url_for('forum') }}" class="btn btn-dark">Forum</a>
                     {% else %}
@@ -69,8 +70,8 @@
                         Returning user? Sign in here to jump back in and discover your next adventure!
                     </p>
                     <p class="card-text hca-p2">
-                        You will have the option to add to the forum by creating a review! Or read company
-                        reviews from other users to help make your decision.
+                        You will have the option to add to the forum by creating a review or discussion post! Read
+                        company review from other users or help others out by answering a question in the forum.
                     </p>
                     <a href="{{ url_for('login') }}" class="btn btn-dark indexloginbtn">Login</a>
                     {% endif %}
