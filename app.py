@@ -135,7 +135,7 @@ def login():
                 session["username"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(
                     request.form.get("username")))
-                return redirect(url_for("forum", username=session["username"]))
+                return redirect(url_for("get_posts", username=session["username"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
