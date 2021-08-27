@@ -19,13 +19,13 @@ mongo = PyMongo(app)
 
 
 # Static page routes
-@app.route('/')
 @app.route("/get_posts")
 def get_posts():
-    posts = list(mongo.db.posts.find())
+    posts = list(mongo.db.posts.find().limit(15))
     return render_template("forum.html", posts=posts)
 
-    
+
+@app.route('/')
 @app.route('/index')
 def index():
     return render_template('index.html')
@@ -46,11 +46,6 @@ def contactus():
         }
         mongo.db.contactuspage.insert_one(register)
     return render_template('contactus.html')
-
-
-@app.route('/forum')
-def forum():
-    return redirect(url_for("get_posts"))
 
 
 @app.route('/companies')
@@ -153,7 +148,7 @@ def login():
 def logout():
     # remove user from session cookie
     flash("You have been logged out")
-    session.pop("username")
+    session.clear()
     return redirect(url_for("login"))
 
 
@@ -176,28 +171,39 @@ def createpost():
 
 @app.route("/editpost/<post_id>", methods=["GET", "POST"])
 def editpost(post_id):
-    if request.method == "POST":
-        submit = {
-            "category_name": request.form.get("category_name"),
-            "post_name": request.form.get("post_name"),
-            "the_post": request.form.get("the_post"),
-            "created_by": session["username"]
-        }
-        print(submit)
-        mongo.db.posts.update({"_id": ObjectId(post_id)}, submit)
-        flash("Post Successfully Updated")
+    creator = mongo.db.posts.find_one({"_id": ObjectId(post_id)}, {"created_by": 1})
+    if session["username"] ==  creator["created_by"]:
+        if request.method == "POST":
+            submit = {
+                "category_name": request.form.get("category_name"),
+                "post_name": request.form.get("post_name"),
+                "the_post": request.form.get("the_post"),
+                "created_by": session["username"]
+            }
+            print(submit)
+            mongo.db.posts.update({"_id": ObjectId(post_id)}, submit)
+            flash("Post Successfully Updated")
+            return redirect(url_for("get_posts"))
+
+        posts = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+        categories = mongo.db.categories.find().sort("category_name", 1)
+        return render_template("editpost.html", posts=posts, categories=categories)
+
+    else:
+        flash("You are not the creator of this post. You cannot edit it.")
         return redirect(url_for("get_posts"))
 
-    posts = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
-    categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("editpost.html", posts=posts, categories=categories)
 
-
-@app.route("/deletepost/<post_id>")
+@app.route("/post/<post_id>")
 def deletepost(post_id):
-    mongo.db.posts.remove({"_id": ObjectId(post_id)})
-    flash("Post Successfully Deleted")
-    return redirect(url_for("get_posts"))
+    creator = mongo.db.posts.find_one({"_id": ObjectId(post_id)}, {"created_by": 1})
+    if session["username"] ==  creator["created_by"]:
+        mongo.db.posts.remove({"_id": ObjectId(post_id)})
+        flash("Post Successfully Deleted")
+        return redirect(url_for("get_posts"))
+    else:
+        flash("You are not the creator of this post. You cannot edit it.")
+        return redirect(url_for("get_posts"))
 
 
 @app.route("/get_categories")
