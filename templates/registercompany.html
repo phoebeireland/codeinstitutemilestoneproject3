@@ -33,13 +33,14 @@
     <div class="container">
 
         <div class="row" id="registercompanyform">
-            <form class="col-sm-12" method="POST" action="{{ url_for('registercompany') }}">
+            <form class="col-sm-12" method="POST" action="{{ url_for('registercompany') }}" id="register_company">
                 <div class="card-panel">
                     <!--Company Name-->
                     <div class="row">
                         <div class="input-field col s12 registerforminput text-center">
                             <label for="companyname">Company Name</label>
                             <input id="companyname" name="companyname" type="text" required>
+                            <input type="text" name="to_name" value="Rate Venture" id="to_name" hidden>
                         </div>
                     </div>
                     <!--Company Website-->
@@ -68,7 +69,7 @@
                     <div class="row">
                         <div class="input-field col-sm-12 registerforminput text-center">
                             <label for="email">Email Address:</label>
-                            <input type="email" id="email" name="email_address" required />
+                            <input type="email" id="email_address" name="email_address" required />
                         </div>
                     </div>
                     <!--text input area-->
@@ -81,7 +82,7 @@
                     </div>
                     <!-- register -->
                     <div class="d-grid gap-2 col-6 mx-auto registerforminput">
-                        <button type="submit" class="btn btn-dark">
+                        <button type="submit" class="btn btn-dark" id="registercompanybtn">
                             Register Company
                         </button>
                     </div>
@@ -89,6 +90,26 @@
             </form>
         </div>
     </div>
+    <script>
+        const btn = document.getElementById('registercompanybtn');
+        document.getElementById('register_company')
+            .addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                btn.value = 'Sending...';
+
+                const serviceID = 'default_service';
+                const templateID = 'register_company';
+
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then(() => {
+                        btn.value = 'Send Email';
+                        alert('Sent!');
+                    }, (err) => {
+                        btn.value = 'Send Email';
+                        alert(JSON.stringify(err));
+                    });
+            });</script>
 </section>
 
 {% endblock %}
