@@ -29,7 +29,7 @@
     <div class="container">
 
         <div class="row" id="contactusform">
-            <form class="col-sm-12" method="POST" action="{{ url_for('contactus') }}">
+            <form class="col-sm-12" method="POST" action="{{ url_for('contactus') }}" id="contact-form">
                 <div class="card-panel">
                     <!-- username -->
                     <div class="row">
@@ -37,6 +37,7 @@
                             <label for="username">Username</label>
                             <input id="username" name="username" type="text" minlength="5" maxlength="15"
                                 pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                            <input type="text" name="to_name" value="Rate Venture" id="to_name" hidden>
                         </div>
                     </div>
                     <!--email-->
@@ -50,13 +51,13 @@
                     <div class="row">
                         <div class="input-field col-sm-12 registerforminput text-center">
                             <h6>Comment:</h6>
-                            <textarea  id="comment" name="comment" rows="10" cols="40"
+                            <textarea id="comment" name="comment" rows="10" cols="40"
                                 placeholder="Type your comment here"></textarea>
                         </div>
                     </div>
                     <!-- submit -->
                     <div class="d-grid gap-2 col-6 mx-auto registerforminput">
-                        <button type="submit" class="btn btn-dark" id="contact-button">
+                        <button type="submit" class="btn btn-dark" id="contact-button" vale="Send Email">
                             Submit
                         </button>
                     </div>
@@ -64,6 +65,26 @@
             </form>
         </div>
     </div>
+    <script>
+        const btn = document.getElementById('contact-button');
+        document.getElementById('contact-form')
+            .addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                btn.value = 'Sending...';
+
+                const serviceID = 'default_service';
+                const templateID = 'contact_form';
+
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then(() => {
+                        btn.value = 'Send Email';
+                        alert('Sent!');
+                    }, (err) => {
+                        btn.value = 'Send Email';
+                        alert(JSON.stringify(err));
+                    });
+            });</script>
 </section>
 
 {% endblock %}
