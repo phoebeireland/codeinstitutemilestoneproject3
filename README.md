@@ -70,7 +70,7 @@ This image shows the inital idea for the about page. This is the page that expla
 
 
 ### Join Us Page
-![Wireframe of the Join Us page](static/images/joiniuspagewireframe.jpg "wireframe of the join us page")
+![Wireframe of the Join Us page](static/images/joinuspagewireframe.jpg "wireframe of the join us page")
 This image is the idea for the join us page. All in all, the page didn't change that much from the original concept to the executed version. THe only slight differenct would be the text at the top of the page before the form starts. 
 
 ### Login Page
