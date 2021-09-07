@@ -33,22 +33,25 @@ As a Returning User to the site, I want:
 
 ## Design Choices
 
-
+The overall feel of the website should be outdoorsy, but not rustic. It's a site for adventure enthusiasts who enjoy a more rugged experience outdoors, but who want a clean look for a website. 
 
 ### Font
 
+The font used on this website is Hahmlet. It was found on Google Fonts, and was chosen for its easy-to-read quality, while still being different than just Times New Roman or another frequently used font.
 
 
 ### Colours
 
 The main colours used on the site are:
-* 
-* 
-* 
+* `#e3f2fd` for the background colour on the footer and the navbar
+* `ghostwhite` for the main text colour in the shaded boxes 
+* `rgba(0, 0, 0, 0.473)` for the colour of the shaded boxes
+* `rgb(7, 179, 1)` for the colour that the footer links turn when they are hovered over with the cursor
 
 
 ### Styling
 
+The overall look of the website is 
 
 
 ## Wireframe Designs
@@ -121,6 +124,8 @@ This is the wireframe for the contact us page. The form ended up being exactly t
 All HTML pages and CSS files were tested using the HTML and CSS Validator from W3.
 * Link to the [HTML Validator](https://validator.w3.org./) used
 * Link to the [CSS Validator](https://jigsaw.w3.org/css-validator/) used
+
+As the html pages on VSCode were written with Flask notation, to test the HTML pages, I opened each page in the browser and right-clicked top open the Inspect Page, and then copied over the HTML code that the page presented there. 
 
 ## Manual Testing
 
