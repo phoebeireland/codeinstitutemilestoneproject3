@@ -17,7 +17,7 @@
 
 ## The Project- Purpose and Buisness Goals
 
-
+The purpose of this website is to create a space in which users who are enthusiastic about the outdoors can find reputable companies and are able to converse with other users on an exclusive forum. The website is accessible to those who have accounts and those who do not. The only difference between the experiences of a user who has an account and is logged in versus a user who has yet to register an account is the visibility of the forum page and the contact page, which is hidden to users who are not logged into the site. 
 
 ## User Stories
 As a New User to the site, I want:
@@ -51,7 +51,7 @@ The main colours used on the site are:
 
 ### Styling
 
-The overall look of the website is 
+The overall look of the website aims to promote the feeling of being outdoors. This is why the background for all of the pages is that of a mountainside. This is also why the text boxes are in semi-transparent cards. Obviously, I wanted the text to be easily readable by any user, but I also did not want to have a completely solid block that would hide the background image. 
 
 
 ## Wireframe Designs
@@ -60,37 +60,45 @@ I have provided additional information reagarding the wireframes below each pict
 
 ### Homepage
 ![Wireframe of the Homepage](static/images/homepagewireframe.jpg "wireframe of the main hopmepage for the site")
+
 This image shows the initial idea for the main page of the website. This is the page that the users would see if they were not logged in or they did not yet have an account.
 The homepage would only change slightly if the user did have an account and was logged in- ie. the two card boxes with information and buttons would change accordingly if a user was logged into their account. In addition, the navbar at the top would also display slightly different options depending on whether the user was logged in or not. 
 
 
 ### About Page
 ![Wireframe of the About page](static/images/aboutpagewireframe.jpg "wireframe of the about page")
+
 This image shows the inital idea for the about page. This is the page that explains to the unregistered/ not logged in user what the site is about and also offers some testimonials from users who have enjoyed the website. As is noticable, this design in the final product differs from the initial concept with the addition of the user accounts and a condensed paragraph regarding the site. Rather than allow it to fill the whole page, I moved it to the top left section, and added in a scenic picture to the right of the description. 
 
 
 ### Join Us Page
 ![Wireframe of the Join Us page](static/images/joinuspagewireframe.jpg "wireframe of the join us page")
+
 This image is the idea for the join us page. All in all, the page didn't change that much from the original concept to the executed version. THe only slight differenct would be the text at the top of the page before the form starts. 
 
 ### Login Page
 ![Wireframe of the Login page](static/images/loginpagewireframe.jpg "wireframe of the join us page")
+
 This image is the idea for the login us page. All in all, the page didn't change that much from the original concept to the executed version. THe only slight differenct would be the text at the top of the page before the form starts. 
 
 ### Forum Page
 ![Wireframe of the Forum page](static/images/forumpagewireframe.jpg "wireframe of the forum page")
+
 This images is the idea for the forum page. It didn't really change that much from the initial design. The only difference would be the addition of the Create Post section in the deployed page that is not in the wireframe. 
 
 ### Companies Page
 ![Wireframe of the Compmanies page](static/images/companiespagewireframe.jpg "wireframe of the companies page")
+
 This image is of the inital idea for the Companies page. The design was relatively simple and the finished product resembles the wireframe. 
 
 ### Register Companies Page
 ![Wireframe of the Register Companies page](static/images/registercompaniespagewireframe.jpg "wireframe of the register companies page")
+
 Ths image is the idea for the Register Company form page. In the end, I decided to simplify the form by ommitting te checklist that is shown in the image. It made more sense to take that section out, as it was complicating the form in an unnecessary way for the user. This function was satisfied by the comment box in which the company looking ot register could specify for themselves what services they offered. 
 
 ### Contact Us Page
 ![Wireframe of the Contact us page](static/images/contactuspagewireframe.jpg "wireframe of the contact us page")
+
 This is the wireframe for the contact us page. The form ended up being exactly the same on the deployed website as it is in the picture above. 
 
 
