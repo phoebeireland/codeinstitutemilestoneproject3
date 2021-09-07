@@ -17,7 +17,7 @@
 
 ## The Project- Purpose and Buisness Goals
 
-
+The purpose of this website is to create a space in which users who are enthusiastic about the outdoors can find reputable companies and are able to converse with other users on an exclusive forum. The website is accessible to those who have accounts and those who do not. The only difference between the experiences of a user who has an account and is logged in versus a user who has yet to register an account is the visibility of the forum page and the contact page, which is hidden to users who are not logged into the site. 
 
 ## User Stories
 As a New User to the site, I want:
@@ -51,7 +51,7 @@ The main colours used on the site are:
 
 ### Styling
 
-The overall look of the website is 
+The overall look of the website aims to promote the feeling of being outdoors. This is why the background for all of the pages is that of a mountainside. This is also why the text boxes are in semi-transparent cards. Obviously, I wanted the text to be easily readable by any user, but I also did not want to have a completely solid block that would hide the background image. 
 
 
 ## Wireframe Designs
