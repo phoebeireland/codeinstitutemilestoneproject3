@@ -17,15 +17,15 @@
 
 ## The Project- Purpose and Business Goals
 
-The purpose of this website is to create a space in which users who are enthusiastic about the outdoors can find reputable companies and are able to converse with other users on an exclusive forum. The website is accessible to those who have accounts and those who do not. The only difference between the experiences of a user who has an account and is logged in versus a user who has yet to register an account is the visibility of the forum page and the contact page, which is hidden to users who are not logged into the site. 
+This Website aims to create a space in which users who are enthusiastic about the outdoors can find reputable companies and converse with other users on an exclusive forum. The Website is accessible to those who have accounts and those who do not. The only difference between the experiences of a user who has an account and is logged in versus a user who has yet to register an account is the visibility of the forum page and the contact page, which is hidden to users who are not logged into the site.
 
 ## User Stories
-As a New User to the site, I want:
+A New User to the site wants:
 1. 
 2. 
 3. 
 
-As a Returning User to the site, I want:
+A Returning User to the site wants:
 1. 
 2. 
 3. 
@@ -33,11 +33,11 @@ As a Returning User to the site, I want:
 
 ## Design Choices
 
-The overall feel of the website should be outdoorsy, but not rustic. It's a site for adventure enthusiasts who enjoy a more rugged experience outdoors, but who want a clean look for a website. 
+The overall feel of the Website should be nature-loving but not rustic. It is a site for adventure enthusiasts who enjoy a more rugged outdoors experience but want a clean look for a website.
 
 ### Font
 
-The font used on this website is Hahmlet. It was found on Google Fonts, and was chosen for its easy-to-read quality, while still being different than just Times New Roman or another frequently used font.
+The font used on this Website is Hahmlet. It was found on Google Fonts and was chosen for its easy-to-read quality while still different from Times New Roman or another frequently used font.
 
 
 ### Colours
@@ -46,16 +46,16 @@ The main colours used on the site are:
 * `#e3f2fd` for the background colour on the footer and the navbar
 * `ghostwhite` for the main text colour in the shaded boxes 
 * `rgba(0, 0, 0, 0.473)` for the colour of the shaded boxes
-* `rgb(7, 179, 1)` for the colour that the footer links turn when they are hovered over with the cursor
+* `rgb(7, 179, 1)` for the colour that the footer links turn when users hover over them with the cursor
 
 
 ### Styling
 
-The overall look of the website aims to promote the feeling of being outdoors. This is why the background for all of the pages is that of a mountainside. This is also why the text boxes are in semi-transparent cards. Obviously, I wanted the text to be easily readable by any user, but I also did not want to have a completely solid block that would hide the background image. 
+The Website aims to promote an outdoors feeling, so the background for all of the pages is that of a mountainside. The text boxes are in semi-transparent cards. This is because the text still needs to be easily readable by any user, but I did not want to have a substantial block that would hide the background image.
 
 
 ## Wireframe Designs
-I have provided additional information reagarding the wireframes below each picture. Please refer to them to explain where a wireframe may differ from the published product, or for choices behind the designs.
+Provided additional information regarding the wireframes below each picture. Refer to them to explain where a wireframe may differ from the published product or for choices behind the designs.
 
 
 ### Homepage
@@ -133,7 +133,7 @@ All HTML pages and CSS files were tested using the HTML and CSS Validator from W
 * Link to the [HTML Validator](https://validator.w3.org./) used
 * Link to the [CSS Validator](https://jigsaw.w3.org/css-validator/) used
 
-As the html pages on VSCode were written with Flask notation, to test the HTML pages, I opened each page in the browser and right-clicked top open the Inspect Page, and then copied over the HTML code that the page presented there. 
+As the HTML pages on VSCode were written with Flask notation, to test the HTML pages, I opened each page in the browser and right-clicked top open the Inspect Page, and then copied over the HTML code that the page presented there. This got around the issue the HTML validator was having with the presence of Flask notation on the VSCode page.
 
 ## Manual Testing
 
@@ -197,15 +197,15 @@ The content of this website was created by Phoebe Ireland, with the exception of
 * [Unsplash](https://unsplash.com/)
   * Used for the images found on the site
 * [Bootstrap](https://getbootstrap.com/)
-  * Used to create the Navbar
+  * Used to create the Navbar and the footer
 * [favicon.io](https://favicon.io/)
   * Used to create the favicon
 * [jQuery](https://jquery.com/)
-  * Uses jQuery for 
+  * Uses jQuery for various Bootstrap functions 
 * Code Institute's Task Manager Project
   * Used to model most of the code for the site.
 * [Emailjs](https://www.emailjs.com/)
-  * Used to connect the contact form to an email service.
+  * Used to connect the contact form to an email service. This is the main instance of JavaScript on the website.
 * [Balsamiq](https://balsamiq.com/)
   * Used to create the wireframes.
 
