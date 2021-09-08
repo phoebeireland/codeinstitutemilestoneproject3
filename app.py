@@ -69,7 +69,7 @@ def response_500(exception):
 def search():
     query = request.form.get("query")
     posts = list(mongo.db.posts.find({"$text": {"$search": query}}))
-    return redirect(url_for("get_posts", posts=posts))
+    return render_template("forum.html", posts=posts)
 
 
 @app.route("/joinus", methods=["GET", "POST"])
