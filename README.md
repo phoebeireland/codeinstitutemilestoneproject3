@@ -21,15 +21,18 @@ This Website aims to create a space in which users who are enthusiastic about th
 
 ## User Stories
 A New User to the site wants:
-1. 
-2. 
-3. 
+1. To be able to sign up to the site easily
+2. To find out what the site is about 
+3. To navigate the site easily
+3. To be presented with an engaging website
 
 A Returning User to the site wants:
-1. 
-2. 
-3. 
-4. 
+1. To be able to sign-in easily
+2. To have an exclusive forum on which a user can make posts and discuss matters with other users
+3. To be able to create posts easily
+4. To be able to edit or delete a post 
+5. To be able to search and find posts directly
+6. To be able to submit a comment or suggestion on how to improve the site
 
 ## Design Choices
 
@@ -214,10 +217,18 @@ The EmailJS extenstion was tested using a sample email address and sample messag
 
 ## Testing User Stories
 ### New User:
-1. 
+1. Upon initially entering the website, new users are greeted by the homepage. On the homempage, there are two cards that direct users to the "Join Us" page, if they have not yet registered, or to the "Login Page" if the have an existing account. 
+2. Accessible to both a logged-in user and a user who does not have an account or is not logged-in, is the "About" page. The link to the About page is easily accessibe through the Navigation bar at the top of every page of the site. A user who wants to find otu more about the website needs only click the link and they will be redirected to the About page. 
+3. On the top of every page is the NavBar element. In the navbar are all of the links to the different pages of the website. From the navbar, a user can go to the login page, the about page, the join us page, the Rate Venture companies page and the register companies page. 
+3. The background of all of the pages is a thrilling picture of a mountainside. The users are greeted on every page with a full-sized picture of a mountain. All of the text blocks are incorporated in such a way that they do not fully block out the background image, but are integrated with the background- keeping it visible but still allowing the text in the boxes to be easily read. A user wants to be able to envision themselves on that mountainside when planning their next great adventure.
 
-### Returning User:
-1. 
+### Returning User
+1. If a user is not yet signed in, on the Homepage there is a card block that redirects users to the Login page of the website. The login page is also accessible from the mavbar which is present on all pages of the website. As the HOmepage is the main page of the website, any user who enters the website for the first time will be taken there initally, so navigating to the Login page should be easy.
+2. The Forum page of the website is accessible only to users who both have an account and are logged-in to that account. It is a page that is accesible through the navbar, and the link is only visible in the navbar if the current user is logged in. 
+3. At the top of the Forum page, there is a section that states "Click here to create a new forum post". A user may then click on the button provided, which will take them to a form that they can then use to create a post. The post form includes a section for specifying the category of the post, the Post Name and a textbox in which the user can type our their query. 
+4. Only the user who created the post is able to edit or delete that post. At the bottom of the post on the forum page, the creator of the post will be able to see two buttons. One says "Delete" and the other says "Edit". The delete button can be used to completely remove the post from the Forum page. The "Edit" button will take the user to the edit post form, which they can use to edit the post. The edit post form automatically fills in the information that was in the post, and the user can choose which section they would like to alter. 
+5. To the left of the forum posts is the Search area. In this area, a user is able to type in keywords from a post's name or the post itself and find the relevant post or posts. To search for a post, they need only type in the search box and press the search button. Once the search is complete, the user presses the "reset" button and the forum page is returned to its original state with all of the posts displayed on the page.
+6. Located in the navbar and visible only to logged-in users, is the Contact Us page. On this page, a user may submit a comment or suggestion to the website on how to improve it or if something is broken and needs to be fixed. This page brings up a form into which a user inputs their username, email address and their comment. Once the user clicks submit, their comment is sent to Rate Venture with the use of EmailJS, and the user is also sent an automatic email from Rate Venture thanking them for their suggestion.
 
 
 ## Small Problems (that were fixed)
