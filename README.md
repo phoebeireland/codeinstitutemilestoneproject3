@@ -103,28 +103,89 @@ This is the wireframe for the contact us page. The form ended up being exactly t
 
 
 # Features
-* 
-* 
+* At the top of every page on the website, there is a Navbar which will allow users to easily navigate around the websites variosu pages.
+* The content of the Navbar will change slightly depending on whether a user is logged-in to their account or not. The only changes will be the accessibility of the user to the Forum page and the Contact Us page.
+* At the bottom of every page on the website, there is a footer containing various social media links that allow a user to navigate to that page once clicked. At it is, there are no social media pages directly related to the created website, so the links will take a user to the generic homepage for all of the links.
+* When the pages are viewd on smaller screens, all of the elements on the page will stack on top of each other and the navbar will collapse.  
 
 ### The Home Page
-* 
-* 
-* 
-* 
-* 
+* When it is initially loaded, the Home page will present two block cards to the user. 
+* If a user is not yet logged-in or does not have an account, the left block will provide links to the "Join Us" page, and the right block will provide links to the Login page. 
+* If a user is logged in, the Homepage will have in its right block a link to bring the user to the Forum, and the left block will have a link to the Contact Us page.
+* Additionally, if a user is logged-in, there will be a heading at the top of the page that says "Welcome {username}".  
+* On smaller screens, the two blocks will stack on top of each other.
+
 
 ### The About Page
-* 
-* 
+* This page does not change if a user is logged-in to their account or not, and is visible to both users. 
+* On this page, at the top left section, a user can read a short blurb about the website's goals and purpose. 
+* Directly to the right of the blurb, there is a picture of a person kayaking down a river. This was added for additional atmosphere on the page.
+* Below the blurb and picture are three cards containing user stories. Each card has a profile picture, the name a location of the user, as well as a short testimonial about the site.
+* On smalelr screens, all elements on the page will stack on top of each other. 
+
+### The Rate Venture Companies Page
+* This page contains the companies pormoted by Rate Venture.
+* This page is also visible to users who are logged in as well as users who are not.
+* Each company has a card that specifies the name of the company, the phone number, location and email address. There is also a link that a user could click on to navigate to that comany's website. There is also a short message about each company and what it can offer users. 
+* Each card stacks on top of each other on smaller screens.
+
+### The Join Us Page
+* This page is only visible to users who have not created an account or who have not yet logged-in to their account.
+* This page contains a form that a user inputs information into in order to create an account to use the website to its fullest capability. 
+* At the top of the page is a short message encouraging users to create an account, and below the form is a small message an link redirecting users if they do have an account alraedy, but accidentally ended up on the wrong page. 
+* The form itself is contained within a card.
+* All elements on the page stack when viewd on smaller screens. 
+
+### The Login Page
+* This page is only visible to users who have not yet logged in or do not have an account.
+* This page contains a short form that a user fills out to login to their account and access the other pages of the website.
+* At the top of the page is a short message encourading users to login, and below the form, there is a small message and link to redirect users to the Join Us page if they do not have an account but  accidentally went to the wrong link.
+* The form itself only takes the "username" and the "password" that the user created on the Join Us page, and once logged in, the form automatically redirects the user to the Forum page.
+* On smaller screens, all elements size-down and stack on one another.
+
+### The Register Company Page
+* This page is only visible to users who have not logged-in to their account.
+* This page offers companies a form to fill out in order to be considered to be added to the "Rate Venture Companies" page. 
+* The form takes information regarding the company. 
+* Once submitted, an email is sent to Rate Venture alerting it that a comanpy has filled out the form, and another email to the company email provided thanking them for submitting their company for consideration. This connection was made with EmailJS.
+* The form sizes-down on smaller screens and all elements stack on top of each other. 
 
 ### The Forum Page
-* 
-* 
-* 
-* 
-* 
-* 
-* 
+* The Forum page is the main page of the website once a user has logged in, and is only visible to users who have logged-in. 
+* It contains all of the posts that are made to the forum, a search bar on the left side that can be used to look for a specific post, and at the top of the page there is a button that can be used to take the user to the "Create a Post" form.
+* The post cards have the title of the post at the top, followed by the category of the post (advice, rating or discussion), the message and the username of the creator of the post. 
+* If the user is the creator of the post, then additional buttons will acompany the bottom of the post card. 
+* A user is able to delete or edit their own post.
+* If a user chooses "Delete", then the post will be removed from the Forum page.
+* If a user chooses "Edit", then the user will be redirected to a form on which they can edit the different aspects of their post. 
+* The search area can be used to search for specific posts using keywords present in their titles or posts themselves.
+* Once a post has been searched and found, a user can use the "Reset" button to clear the search and return all of the posts to the page.
+* On smaller screens, all elements on the page collapse, and stack on top of each other.
+
+### The Create Post form
+* This form is accessible only to users who are logged in through the forum page.
+* This page presents a short form a user can use to create a forum post.
+* A user can specify the category of the post in the drop-down menu, then write in the name of their post. After those steps, a user can type out their message in the textbox provided. 
+* Once a user pressed "Submit", they are redirected to the forum page, where their post will be displayed.
+* On a smaller screen, the form sizes down and everything collapses.
+
+### The Edit post form
+* When the edit button is clicked, the user is taken to a form that has the information from the post pre-filled in, and they are able to edit any part of the post they want to.
+* The edit post form is only accessible through the forum page if the user trying to edit a post is the creator of that post. 
+* At the bottom of the form there are two buttons- "Cancel" and "Edit Post". 
+* The cancel button cancels any changes made and brings the user back to the forum page without altering the post.
+* The edit button saves the changes made to the post and brings the user back to the forum page and presents the post with the changes that were added.
+* On smaller screens, the form sizes down aznd everything collapses.
+
+### The Contact Us page
+* This page is only visible to users who are logged-in to their accounts.
+* This page presents a form that users can use to make comments or suggestions to the website. 
+* This page is connected to EmailJS, and when a user submits a comment, an email is sent to Rate Venture that contains the content of the Contact form, and another email is sent to the user who submitted the form thanking them for their suggestion, and confirming that the suggestion was received.
+* The form sizes down on smaller screens and everything collapses. 
+
+### The Logout button
+* This button is present in the navbar element and is only visible to the users who are currently logged into their account.
+* Once pressed, the button logs the user out, and redirects the user to the login page. 
 
 # Testing the Site
 
@@ -138,15 +199,25 @@ As the HTML pages on VSCode were written with Flask notation, to test the HTML p
 ## Manual Testing
 
 Using the Chrome Inspect tool, the following aspects of the website were tested:
-* 
-* 
-* 
-* 
-* 
+* All of the contents on the pages of the website collapsed correctly when viewed on a smaller screen.
+* The footer remained at the bottom of the pages when viewed on a smaller screen.
+* The Navbar collapsed correctly when viewed on a smaller screen, and the correct code was there to enable to collapsed menu to expand when clicked. 
+* The text within the boxes were all still correctly centered on smaller screens just as they were on the larger ones. 
+* On the About page, the three boxes at the bottom stacked correctly on smaller screens. 
+* On the Forum and Companies pages, the Forum post cards and the Company cards all stacked correctly on smaller screens. 
 
 The EmailJS extenstion was tested using a sample email address and sample message.
-* The result of this test was that the EmailJS service sent an email to the connected email address saying that a message was submitted.
+* The result of this test was that the EmailJS service sent an email to the email address of the webpage saying that a message was submitted. This message also contained the contents of the submitted form. 
 * Also, an Auto-Reply email was successfully sent to the email address provied in the form. 
+* This process was tested for the Contact Us form and the Register Company form, as these were the two forms connected to the EmailJS service, as adding another form/service on the EmailJS site would have required payment. 
+
+
+## Testing User Stories
+### New User:
+1. 
+
+### Returning User:
+1. 
 
 
 ## Small Problems (that were fixed)
@@ -216,6 +287,8 @@ The content of this website was created by Phoebe Ireland, with the exception of
   * Used to connect the contact form to an email service. This is the main instance of JavaScript on the website.
 * [Balsamiq](https://balsamiq.com/)
   * Used to create the wireframes.
+* [Code Institute Task Manager Project](https://github.com/Code-Institute-Solutions/TaskManagerAuth)
+  * Used to model all of the main code for the CRUD operations on the HTML and Python sides.
 
 
    All of the content that was taken from other sources was altered to fit the use of this website where necessary.
