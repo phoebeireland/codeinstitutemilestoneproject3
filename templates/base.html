@@ -95,11 +95,9 @@
 
     {% with messages = get_flashed_messages() %}
         {% if messages %}
-            <ul>
                 {% for message in messages %}
-                    <li class="alert-warning">{{ message }}</li>
+                    <p class="alert-warning text-center">{{ message }}</p>
                 {% endfor %}
-            </ul>
         {% endif %}
     {% endwith %}
     
